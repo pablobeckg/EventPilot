@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { EventComplete } from "../../../types/supabase-types-own";
-import supabaseClient from "../../../lib/supabaseClient";
+import { EventComplete } from "../../types/supabase-types-own";
+import supabaseClient from "../../lib/supabaseClient";
+import "./EventDetailPage.css"
 
 const EventDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -24,7 +25,6 @@ const EventDetailPage = () => {
         setEvent(null);
       } else {
         setEvent(result.data);
-        console.log(result.data);
       }
     };
     fetchSingleEvent();

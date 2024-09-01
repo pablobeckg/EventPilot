@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import supabaseClient from "../../lib/supabaseClient";
 import { EventComplete } from "../../types/supabase-types-own";
 import { Link } from "react-router-dom";
+import "./Home.css"
 
-const EventsPage = () => {
+const Home = () => {
     const [events, setEvents] = useState<EventComplete[]>([])
 
   useEffect(() => {
@@ -15,7 +16,6 @@ const EventsPage = () => {
         setEvents([]);
       } else {
         setEvents(result.data);
-        console.log(result.data)
       }
     };
     fetchEvents();
@@ -39,4 +39,4 @@ const EventsPage = () => {
 );
 };
 
-export default EventsPage;
+export default Home;

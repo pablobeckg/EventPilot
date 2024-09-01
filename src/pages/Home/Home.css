@@ -1,0 +1,13 @@
+.event-list-container {
+    width: 320px;
+    border: 1px solid blue;
+    display: flex;
+    overflow: scroll;
+}
+
+.event-item-container {
+    margin-right: 1rem;
+    width: 237px;
+    border: 1px solid red;
+    flex-shrink: 0;
+}
