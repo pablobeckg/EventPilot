@@ -11,17 +11,17 @@ export type Database = {
     Tables: {
       categories: {
         Row: {
-          categorie_name: string
+          category_name: string
           created_at: string
           id: string
         }
         Insert: {
-          categorie_name: string
+          category_name: string
           created_at?: string
           id?: string
         }
         Update: {
-          categorie_name?: string
+          category_name?: string
           created_at?: string
           id?: string
         }
@@ -29,42 +29,48 @@ export type Database = {
       }
       events: {
         Row: {
-          categorie_id: string
+          category_id: string
           created_at: string
           event_date: string
+          event_finish_time: string
           event_image: string
           event_info: string
           event_start_time: string
           event_title: string
           id: string
           location_id: string
+          venue_id: string | null
         }
         Insert: {
-          categorie_id: string
+          category_id: string
           created_at?: string
           event_date: string
+          event_finish_time: string
           event_image: string
           event_info: string
           event_start_time: string
           event_title: string
           id?: string
           location_id: string
+          venue_id?: string | null
         }
         Update: {
-          categorie_id?: string
+          category_id?: string
           created_at?: string
           event_date?: string
+          event_finish_time?: string
           event_image?: string
           event_info?: string
           event_start_time?: string
           event_title?: string
           id?: string
           location_id?: string
+          venue_id?: string | null
         }
         Relationships: [
           {
             foreignKeyName: "events_categorie_id_fkey"
-            columns: ["categorie_id"]
+            columns: ["category_id"]
             isOneToOne: false
             referencedRelation: "categories"
             referencedColumns: ["id"]
@@ -74,6 +80,13 @@ export type Database = {
             columns: ["location_id"]
             isOneToOne: false
             referencedRelation: "locations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "events_venue_id_fkey"
+            columns: ["venue_id"]
+            isOneToOne: false
+            referencedRelation: "venues"
             referencedColumns: ["id"]
           },
         ]
@@ -172,6 +185,24 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      venues: {
+        Row: {
+          created_at: string
+          id: string
+          venue_name: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          venue_name: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          venue_name?: string
+        }
+        Relationships: []
       }
     }
     Views: {
