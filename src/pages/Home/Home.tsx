@@ -9,7 +9,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchEvents = async () => {
-      let selectQuery = supabaseClient.from("events").select("*, categories(*), locations(*), venues(*)");
+      let selectQuery = supabaseClient.from("events").select("*, categories(*), locations(*), venues(*), favorites(*)");
 
       const result = await selectQuery;
       if (result.error) {
@@ -20,6 +20,7 @@ const Home = () => {
     };
     fetchEvents();
   }, []);
+  console.log(events)
 
   return (
   <main className="event-list-container">

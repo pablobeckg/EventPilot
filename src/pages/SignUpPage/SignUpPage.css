@@ -1,0 +1,9 @@
+.signup-container {
+    width: 320px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

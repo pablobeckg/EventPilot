@@ -3,6 +3,7 @@
     border: 1px solid blue;
     display: flex;
     overflow: scroll;
+    align-items: flex-start;
 }
 
 .event-item-container {

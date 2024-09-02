@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { EventComplete } from "../../types/supabase-types-own";
 import supabaseClient from "../../lib/supabaseClient";
-import "./EventDetailPage.css"
+import "./EventDetailPage.css";
 
 const EventDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -25,12 +25,22 @@ const EventDetailPage = () => {
         setEvent(null);
       } else {
         setEvent(result.data);
+        console.log(result)
       }
+      
     };
     fetchSingleEvent();
   }, []);
 
-  return <h1>{event?.event_title}</h1>;
+  return (
+    <main className="event-detail-container">
+      <h1>{event?.event_title}</h1>
+      <h2>{event?.event_date}</h2>
+      <h2>{event?.event_start_time}{event?.event_finish_time}</h2>
+      <h2>{event?.venues?.venue_name}</h2>
+      <h2>{event?.locations?.location_name}</h2>
+    </main>
+  );
 };
 
 export default EventDetailPage;

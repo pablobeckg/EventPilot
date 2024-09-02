@@ -12,5 +12,6 @@ export type EventComplete = Event & {
     categories: Category | null;
     locations: Location | null;
     venues: Venue | null;
+    favorites: Favorite[] | null;
   };
   
