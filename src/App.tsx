@@ -10,6 +10,7 @@ import SearchPage from "./pages/SearchPage/SearchPage";
 import LikedPage from "./pages/LikedPage/LikedPage";
 import Footer from "./components/Footer/Footer";
 import AddEventPage from "./pages/AddEventPage/AddEventPage";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/liked" element={<LikedPage />} />
           <Route path="/addevent" element={<AddEventPage />} /> 
           <Route path="/event/:id" element={<EventDetailPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
           </Route>
         </Routes>
         <Footer/>
