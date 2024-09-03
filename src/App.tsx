@@ -9,6 +9,7 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import LikedPage from "./pages/LikedPage/LikedPage";
 import Footer from "./components/Footer/Footer";
+import AddEventPage from "./pages/AddEventPage/AddEventPage";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
           <Route element={<PrivateRoute />}>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<SearchPage />} />
-          <Route path="/liked" element={<LikedPage />} /> 
+          <Route path="/liked" element={<LikedPage />} />
+          <Route path="/addevent" element={<AddEventPage />} /> 
           <Route path="/event/:id" element={<EventDetailPage />} />
           </Route>
         </Routes>

@@ -16,7 +16,7 @@ const EventDetailPage = () => {
       }
       let selectQuery = supabaseClient
         .from("events")
-        .select("*, categories(*), locations(*), venues(*)")
+        .select("*, categories(*), locations(*), venues(*), favorites(*)")
         .eq("id", id)
         .single();
 
@@ -25,7 +25,6 @@ const EventDetailPage = () => {
         setEvent(null);
       } else {
         setEvent(result.data);
-        console.log(result)
       }
       
     };

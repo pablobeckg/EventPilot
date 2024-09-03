@@ -20,7 +20,6 @@ const Home = () => {
     };
     fetchEvents();
   }, []);
-  console.log(events)
 
   return (
   <main className="event-list-container">
