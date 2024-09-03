@@ -10,6 +10,19 @@
   box-sizing: 0;
 }
 
+@font-face {
+  font-family: InterRegular;
+  src: url(./assets/Fonts/Inter_18pt-Regular.ttf);
+}
+@font-face {
+  font-family: InterMedium;
+  src: url(./assets/Fonts/Inter_18pt-Medium.ttf);
+}
+@font-face {
+  font-family: InterThin;
+  src: url(./assets/Fonts/Inter_18pt-Thin.ttf);
+}
+
 body {
   display: flex;
   min-width: 320px;
