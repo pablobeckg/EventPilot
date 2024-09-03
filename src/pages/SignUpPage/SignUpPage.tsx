@@ -37,30 +37,33 @@ const SignUpPage = () => {
 
   return (
     <div className="signup-container">
+      <div className="logoHeader">
+        <img src="./Header.png" alt="Header" />
+      </div>
       <form className="signup-form" onSubmit={handleSignup}>
         <h2>Sign up</h2>
-        <input
+        <input className="signupInputField"
           type="text"
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
           placeholder="Enter your name"
           required
         />
-        <input
+        <input className="signupInputField"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
           required
         />
-        <input
+        <input className="signupInputField"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Enter your password"
           required
         />
-        <input
+        <input className="signupInputField"
           type="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
@@ -69,10 +72,10 @@ const SignUpPage = () => {
         />
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         {successMessage && <p className="success-message">{successMessage}</p>}
-        <button type="submit">Sign Up</button>
+        <button className="signupButton" type="submit">Sign Up <img src="./Arrow.png" alt="ArrowButton" /></button>
       </form>
       <h3>
-        Already have an account? <Link to="/login">Sign In</Link>
+        Already have an account? <Link to="/login"><span>Sign In</span></Link>
       </h3>
     </div>
   );
