@@ -9,6 +9,7 @@
     min-width: 320px;
     min-height: 100vh;
     letter-spacing: 1px;
+    padding: 0 20px 30px 20px;
 }
 
 .login-form {
@@ -22,7 +23,6 @@
     font-family: InterMedium;
     font-size: 24px;
     color: #120D26;
-
 }
 
 .loginInputField {
@@ -31,7 +31,6 @@
     height: 3rem;
     width: 17rem;
     border-radius: 10px;
-
 }
 .loginInputField::placeholder {
     padding: 0 10%;
@@ -39,8 +38,8 @@
     font-family: InterThin;
     font-size: 14px;
     padding-left: 10%;
-
 }
+
 .loginInputField:nth-of-type(1) {
     padding-left: 40px;
     background: url('../../../public/Message.png') no-repeat 10px center;
@@ -71,7 +70,6 @@
     gap: 10px;
     padding: 0 1rem;
     position: relative;
-    
 }
 .loginButton img {
     position: absolute;

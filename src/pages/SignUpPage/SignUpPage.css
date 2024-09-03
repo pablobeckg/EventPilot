@@ -1,9 +1,105 @@
 .signup-container {
-    width: 320px;
+    min-width: 320px;
+    min-height: 100vh;
+    letter-spacing: 1px;
+    padding: 0 20px 30px 20px;
+}
+
+.logoHeader {
+    display: flex;
+    justify-content: center;
+    padding-top: 5vh;
+    padding-bottom: 2vh;
+}
+.logoHeader img {
+    width: 10rem;
+    height: 100%;
 }
 
 .signup-form {
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    justify-content: center;
+    gap: 20px;
+}
+
+.signup-form h2 {
+    font-family: InterMedium;
+    font-size: 24px;
+    color: #120D26;
+}
+
+.signupInputField {
+    border-style: none;
+    box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
+    height: 3rem;
+    width: 19rem;
+    border-radius: 10px;
+}
+.signupInputField::placeholder {
+    padding: 0 10%;
+    color: #A6A6A6;
+    font-family: InterThin;
+    font-size: 14px;
+    padding-left: 10%;
+}
+
+.signupInputField:nth-of-type(1) {
+    padding-left: 5px;
+    background: url('../../../public/Profile.png') no-repeat 10px center;
+    background-size: 15px 15px;
+}
+.signupInputField:nth-of-type(2) {
+    padding-left: 5px;
+    background: url('../../../public/Message.png') no-repeat 10px center;
+    background-size: 15px 15px;
+}
+.signupInputField:nth-of-type(3) {
+    padding-left: 5px;
+    background: url('../../../public/Lock.png') no-repeat 10px center,
+                url('../../../public/Hidden.png') no-repeat right 10px center;
+    background-size: 17px 15px, 20px 20px;
+}
+.signupInputField:nth-of-type(4) {
+    padding-left: 5px;
+    background: url('../../../public/Lock.png') no-repeat 10px center,
+                url('../../../public/Hidden.png') no-repeat right 10px center;
+    background-size: 17px 15px, 20px 20px;
+}
+
+.signupButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-style: none;
+    border-radius: 10px;
+    color: white;
+    font-family: InterMedium;
+    font-size: 16px;
+    text-transform: uppercase;
+    background-color: #5D3EDE;
+    height: 3rem;
+    width: 17rem;
+    gap: 10px;
+    padding: 0 1rem;
+    position: relative;
+}
+.signupButton img {
+    position: absolute;
+    right: 1rem;
+    height: auto;
+    border: none;
+}
+
+h3 {
+    font-family: InterThin;
+    font-size: 15px;
+    padding: 10px 20px;
+    color: #120d26a4;
+    text-align: center;
+}
+h3 span {
+    color: #5e3ede97;
 }
