@@ -38,16 +38,19 @@ const LogInPage = () => {
 
   return (
     <div className="login-container">
+      <div className="logoHeader">
+        <img src="./Header.png" alt="Header" />
+      </div>
       <form className="login-form" onSubmit={handleLogin}>
         <h2>Sign in</h2>
-        <input
+        <input className="loginInputField"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
           required
         />
-        <input
+        <input className="loginInputField"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -56,14 +59,14 @@ const LogInPage = () => {
         />
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         {successMessage && <p className="success-message">{successMessage}</p>}
-        <button type="submit">Sign in</button>
+        <button className="loginButton" type="submit">Sign in <img src="./Arrow.png" alt="ArrowButton" /></button>
       </form>
       <div className="reset-password-container">
         {/* <button className="additional-button" onClick={handleResetPassword}>
           Forgot your password?
         </button> */}
         <h3>Don’t have an account?   <Link to="/signup">
-          Sign Up
+        <span>Sign-Up</span>
         </Link></h3>
        
       </div>
