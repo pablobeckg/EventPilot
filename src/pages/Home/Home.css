@@ -11,4 +11,17 @@
     width: 237px;
     border: 1px solid red;
     flex-shrink: 0;
+    display: flex;
+    overflow: scroll;
+    align-items: flex-start;
+}
+
+
+.all-events-list{
+    background-color: aqua;
+}
+
+.all-events-item-container{
+    max-width: 100%;
+    background-color: red;
 }
