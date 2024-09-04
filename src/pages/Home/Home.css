@@ -1,4 +1,4 @@
-.body {
+/* .body {
     background-color: #DADADA;
     min-width: 320px;
     min-height: 100vh;
@@ -11,7 +11,7 @@ header {
     justify-content: center;
     align-items: center;
     position: relative;
-}
+} */
 
 .logo {
     margin: 20px;
@@ -92,6 +92,7 @@ header {
 }
 .event-item-container-item h1 , .all-event-item-container h1{
     font-size: 13px;
+    color: pink;
 }
 .event-item-container-item h2 , .all-event-item-container h2{
     font-size: 13px;
