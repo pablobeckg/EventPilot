@@ -143,32 +143,36 @@ const Home = () => {
   return (
     <>
     <header>
-    <select
-          name="location"
-          id="location-select"
-          value={selectedLocation || ""}
-          onChange={(e) => setSelectedLocation(e.target.value)}
-        >
-          <option value="">All Locations</option>
-          {locations.map((location) => (
-            <option key={location.id} value={location.id}>
-              {location.location_name}
-            </option>
-          ))}
-        </select>
+      <div className="logo">
+          <img src="/Logo.png" alt="Logo" />
+      </div>
+      <select className="locationSelection"
+            name="location"
+            id="location-select"
+            value={selectedLocation || ""}
+            onChange={(e) => setSelectedLocation(e.target.value)}
+          >
+            <option value="">All Locations</option>
+            {locations.map((location) => (
+              <option key={location.id} value={location.id}>
+                {location.location_name}
+              </option>
+            ))}
+      </select>
     </header>
+<h2 className="upcomingEventTitel">Upcoming Events</h2>
   <main className="event-list-container">
 
-<h2>Upcoming Events</h2>
     {upcomingEvents.length === 0 && <p>No Events yet</p>}
     {upcomingEvents && upcomingEvents.length > 0 && upcomingEvents.map((event) => (
         
         <article className="event-item-container" key={event.id}>
+          <img src="/EventImg.png" alt="EventImgPlaceholder" />
           <div className="event-item-contaier-item">
             <Link to={`event/${event.id}`}>
             <h2>{event.event_date} {event.event_start_time}</h2>
             <h1>{event.event_title}</h1>
-            <h2>{event.locations?.location_name}</h2>
+            <div className="locationContainer"><img src="/Registered.png" alt="registeredImg" /><img className="mapPin" src="/MapPin.png" alt="mapPin" /><h2>{event.locations?.location_name}</h2></div>
             </Link>
             </div>
         </article>

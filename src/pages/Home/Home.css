@@ -1,21 +1,102 @@
+.body {
+    background-color: #DADADA;
+    min-width: 320px;
+    min-height: 100vh;
+    letter-spacing: 1px;
+    padding: 0 20px 30px 20px;
+
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    margin: 20px;
+    margin-right: auto;
+}
+
+.upcomingEventTitel {
+    margin-bottom: 20px;
+    padding: 0 10px;
+    font-family: InterMedium;
+    font-size: 18px;
+}
+.locationSelection {
+    margin-right: 100px;
+    margin-top: 0;
+    border-style: none;
+    font-size: 12px;
+    font-family: InterThin;
+    color: #5D3EDE;
+}
+
+
 .event-list-container {
     width: 320px;
-    border: 1px solid blue;
+    height: 500px;
     display: flex;
     overflow: scroll;
     align-items: flex-start;
+    /* position: absolute; */
 }
+
+.footer-container {
+    border: 2px solid green;
+    margin-bottom: -37.5rem;
+
+    /* bottom: 120px; */
+}
+
+/* je card */
 
 .event-item-container {
     margin-right: 1rem;
-    width: 237px;
-    border: 1px solid red;
+    /* width: 237px; */
+    width: 220px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
     flex-shrink: 0;
     display: flex;
+    flex-direction: column;
     overflow: scroll;
-    align-items: flex-start;
+    align-items: center;
+    padding: 3px 10px;
+}
+.event-item-container img {
+    width: 100%;
+    height: auto;
+    display: block; 
+    border-radius: 10px;
+    margin-bottom: 3px;
 }
 
+.event-item-contaier-item {
+    font-family: InterMedium;
+    width: 100%;
+}
+.event-item-contaier-item h1 {
+    font-size: 13px;
+}
+.event-item-contaier-item h2 {
+    font-size: 13px;
+}
+.locationContainer {
+    display: flex;
+    gap: 10px;
+}
+.locationContainer img{
+    width:80px;
+    height: 100%;
+}
+.locationContainer .mapPin  {
+    width: 10px;
+    height: 100%;
+}
 
 .all-events-list{
     background-color: aqua;
