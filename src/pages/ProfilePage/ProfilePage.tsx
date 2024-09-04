@@ -118,17 +118,18 @@ const ProfilePage = () => {
       </button>
       <div className="profile-about-me-followers">
         <div className="followers">
-            <p>300</p>
+            <p className="follow-counter">300</p>
             <p>Followers</p>
         </div>
+        <div className="dash"> </div>
         <div className="following">
-            <p>500</p>
+            <p className="follow-counter">500</p>
             <p>Following</p>
         </div>
       </div>
       <div className="profile-about-me-container">
-        <strong>About me:</strong>
-        {profile?.about_me}
+        <h2>About me</h2>
+        <p className="about-me-text">{profile?.about_me}</p>
       </div>
           <button className="logout-btn" onClick={handleLogout}>
             Logout
