@@ -1,9 +1,12 @@
 .profile-page{
     display: flex;
     max-width: 320px;
+    max-height: 600px;
     padding: 2rem;
     flex-direction: column;
     background-color: #fff;
+    font-family: InterThin;
+    overflow-y: scroll;
   }
 
 .avatar-wrapper{
@@ -22,6 +25,16 @@
     text-align: center;
 }
 
+.upload-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.label-upload-avatar{
+    text-align: center;
+}
+
 .profile-page button, input::file-selector-button {
     display: flex;
     justify-content: center;
@@ -37,6 +50,40 @@
     height: 3rem;
     width: 17rem;
     gap: 10px;
-    padding: 0 1rem;
+    padding: 1em 1rem;
     position: relative;
+}
+
+
+h1{
+    font-family: InterMedium;
+}
+
+.profile-about-me-container h2{
+    font-family: InterRegular;
+}
+
+.about-me-text{
+    font-family: InterThin;
+    margin: 1em 0 3em 0;
+    line-height: 1.5rem;
+}
+
+.profile-about-me-followers{
+    display: flex;
+    justify-content: space-around;
+    padding: 3em 0;
+}
+
+.followers, .following{
+    text-align: center;
+}
+
+.follow-counter{
+    font-family: InterRegular;
+}
+
+.dash{
+    background-color: #222;
+    width: 1px;
 }
