@@ -96,10 +96,11 @@ const ProfilePage = () => {
     return (
         <div className="profile-page">
         <h1 className="profile-name">{profile?.name}</h1>
-
+        <div className="avatar-wrapper">
       {avatarUrl ? <img src={avatarUrl} alt="avatar" className="avatar-image"></img> : <p>No avatar.</p>}
+      </div>
       <div className="upload-container">
-        <label className="label">Change your Avatar:</label>
+        <label className="label-upload-avatar">Change your Avatar:</label>
         <input
           type="file"
           className="input"
