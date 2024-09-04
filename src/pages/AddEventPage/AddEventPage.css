@@ -1,8 +1,10 @@
 .add-event-container {
   min-width: 320px;
-  min-height: 100vh;
+  height: 550px;
   letter-spacing: 1px;
   padding: 1rem;
+  background-color: gray;
+  overflow: scroll;
 }
 
 .add-event-container h2 {
@@ -42,6 +44,7 @@ fill: gray;
   border: none;
   background-color: transparent;
 }
+
 .addevent-input {
   background-color: white;
   padding: 1rem;
