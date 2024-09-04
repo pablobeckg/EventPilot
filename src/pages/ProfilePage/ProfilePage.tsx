@@ -17,6 +17,18 @@ const ProfilePage = () => {
         return;
       }
 
+      const handleLogout = async (e: React.MouseEvent) => {
+        e.preventDefault();
+  
+        const signoutResponse = await supabaseClient.auth.signOut();
+    
+        if (signoutResponse.error) {
+          console.log('Logout error', signoutResponse.error);
+        } else {
+          userContext?.setUser(null);
+        }
+      }
+
       useEffect(() => {
         const fetchUserProfile = async () => {
 
@@ -83,7 +95,7 @@ const ProfilePage = () => {
     
     return (
         <div className="profile-page">
-        <h1>{profile?.name}</h1>
+        <h1 className="profile-name">{profile?.name}</h1>
 
       {avatarUrl ? <img src={avatarUrl} alt="avatar" className="avatar-image"></img> : <p>No avatar.</p>}
       <div className="upload-container">
@@ -117,7 +129,9 @@ const ProfilePage = () => {
         <strong>About me:</strong>
         {profile?.about_me}
       </div>
-
+          <button className="logout-btn" onClick={handleLogout}>
+            Logout
+          </button>
 
     </div>
     );

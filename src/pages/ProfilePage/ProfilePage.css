@@ -1,0 +1,19 @@
+.profile-page{
+    display: flex;
+    max-width: 320px;
+    min-height: 100vh;
+    padding: 2rem;
+    flex-direction: column;
+  }
+
+.avatar-image{
+    width: 100%;
+}
+
+.avatar-image img{
+    max-width: 100%;
+}
+
+.profile-name{
+    text-align: center;
+}
