@@ -160,42 +160,52 @@ const Home = () => {
             ))}
       </select>
     </header>
-<h2 className="upcomingEventTitel">Upcoming Events</h2>
   <main className="event-list-container">
-
-    {upcomingEvents.length === 0 && <p>No Events yet</p>}
-    {upcomingEvents && upcomingEvents.length > 0 && upcomingEvents.map((event) => (
+    <div>
+      <h2 className="upcomingEventTitel">Upcoming Events</h2>
+    </div>
+    <div className="scrollEvents">
+      {upcomingEvents.length === 0 && <p>No Events yet</p>}
+      {upcomingEvents && upcomingEvents.length > 0 && upcomingEvents.map((event) => (
+          
+          <article className="event-item-container" key={event.id}>
+            <img src="/EventImg.png" alt="EventImgPlaceholder" />
+            <div className="event-item-contaier-item">
+              <Link to={`event/${event.id}`}>
+              <h2>{event.event_date} {event.event_start_time}</h2>
+              <h1>{event.event_title}</h1>
+              <div className="locationContainer"><img src="/Registered.png" alt="registeredImg" /><img className="mapPin" src="/MapPin.png" alt="mapPin" /><h2>{event.locations?.location_name}</h2></div>
+              </Link>
+              </div>
+          </article>
         
-        <article className="event-item-container" key={event.id}>
-          <img src="/EventImg.png" alt="EventImgPlaceholder" />
-          <div className="event-item-contaier-item">
-            <Link to={`event/${event.id}`}>
-            <h2>{event.event_date} {event.event_start_time}</h2>
-            <h1>{event.event_title}</h1>
-            <div className="locationContainer"><img src="/Registered.png" alt="registeredImg" /><img className="mapPin" src="/MapPin.png" alt="mapPin" /><h2>{event.locations?.location_name}</h2></div>
-            </Link>
-            </div>
-        </article>
-      
-    ))}
-<h2>Nearby You</h2>
-{nearby.length === 0 && <p>No Events yet</p>}
-    {nearby && nearby.length > 0 && nearby.map((event) => (
-        
-        <article className="event-item-container" key={event.id}>
-          <div className="event-item-contaier-item">
-            <Link to={`event/${event.id}`}>
-            <h2>{event.event_date} {event.event_start_time}</h2>
-            <h1>{event.event_title}</h1>
-            <h2>{event.locations?.location_name}</h2>
-            </Link>
-            </div>
-        </article>
-      
-    ))}
-
-    <div className="all-events-list">
+      ))}
+    </div>
+    <div className="nearbyContainer">
+      <h2 className="nearbyEventTitel">Nearby You</h2>
+      <p>See All</p>
+    </div>
+    <div className="scrollEvents">
+      {nearby.length === 0 && <p>No Events yet</p>}
+          {nearby && nearby.length > 0 && nearby.map((event) => (
+              
+              <article className="event-item-container" key={event.id}>
+                <img src="/EventImg.png" alt="EventImgPlaceholder" />
+                <div className="event-item-contaier-item">
+                  <Link to={`event/${event.id}`}>
+                  <h2>{event.event_date} {event.event_start_time}</h2>
+                  <h1>{event.event_title}</h1>
+                  <h2>{event.locations?.location_name}</h2>
+                  </Link>
+                  </div>
+              </article>
+            
+          ))}
+    </div>
+    <div>
       <h2>all Events</h2>
+    </div>
+    <div>
         {events.length === 0 && <p>No Events yet</p>}
         {events &&
           events.length > 0 &&
