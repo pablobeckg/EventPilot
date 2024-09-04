@@ -6,11 +6,13 @@
     position: relative;
     background-color: white;
 }
+
 .add-event-button {
     width: 46px;
     height: 46px;
     position: absolute;
     top:-23px;
+    border-radius: 50px;
 }
 
 .add-event-button img{
@@ -23,7 +25,52 @@
     display: flex;
     justify-content: space-between;
     padding: 1rem;
-    min-width: 320px;
+    width: 100%;
 }
+
+.active.explore-icon svg g,
+.active.explore-icon svg g circle, .active.explore-icon svg g .svg-text {
+    opacity: 1;
+  
+    fill: #5D3EDE;
+}
+
+.active.search-icon svg g  {
+    opacity: 1;
+}
+.active.search-icon svg g .glass {
+    stroke: #5D3EDE;
+    opacity: 1;
+}
+
+.active.search-icon svg g .search-text {
+    fill: #5D3EDE;
+}
+
+.active.profile-icon svg g ellipse, .active.profile-icon svg g, .active.profile-icon svg path {
+    opacity: 1;
+    fill: #5D3EDE;
+}
+.active.profile-icon svg g ellipse{
+    stroke: #5D3EDE;
+}
+.active.profile-icon svg g  .half-circle{
+    stroke: #5D3EDE;
+    fill: #5D3EDE;
+}
+
+
+.active.events-icon path {
+    opacity: 1;
+    fill: #5D3EDE;
+}
+
+.active.events-icon .top-events {
+    opacity: 1;
+    fill: #5D3EDE;
+    stroke: #5D3EDE;
+}
+
+
 
 
