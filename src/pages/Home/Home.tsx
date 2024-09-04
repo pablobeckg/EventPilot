@@ -169,7 +169,7 @@ const Home = () => {
       {upcomingEvents && upcomingEvents.length > 0 && upcomingEvents.map((event) => (
           
           <article className="event-item-container" key={event.id}>
-            <img src="/EventImg.png" alt="EventImgPlaceholder" />
+            <img src={event.event_image} alt="EventImgPlaceholder" />
             <div className="event-item-contaier-item">
               <Link to={`event/${event.id}`}>
               <h2>{event.event_date} {event.event_start_time}</h2>
@@ -190,7 +190,7 @@ const Home = () => {
           {nearby && nearby.length > 0 && nearby.map((event) => (
               
               <article className="event-item-container" key={event.id}>
-                <img src="/EventImg.png" alt="EventImgPlaceholder" />
+                <img src={event.event_image} alt="EventImgPlaceholder" />
                 <div className="event-item-contaier-item">
                   <Link to={`event/${event.id}`}>
                   <h2>{event.event_date} {event.event_start_time}</h2>
