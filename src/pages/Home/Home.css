@@ -1,17 +1,17 @@
-/* .body {
-    background-color: #DADADA;
+.eventBase {
+    background-color: #ffffff;
     min-width: 320px;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     letter-spacing: 1px;
     padding: 0 20px 30px 20px;
 }
 
-header {
+.eventTop {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-} */
+}
 
 .logo {
     margin: 20px;
@@ -19,7 +19,7 @@ header {
 }
 
 .upcomingEventTitel {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 0 10px;
     font-family: InterMedium;
     font-size: 18px;
@@ -34,31 +34,27 @@ header {
 }
 
 .event-list-container {
-    /* width: 320px;
-    height: 350px; */
-
+    width: 320px;
+    height: 32em;
+    overflow-y: scroll; 
 }
 
 .scrollEvents {
-    border: 2px solid red;
     width: 320px;
-    height: 150px;
+    height: 170px;
     display: flex;
     flex-direction: row;
     overflow-x: scroll; 
     align-items: flex-start;
     white-space: nowrap; 
+
 }
 
 .scrollAllEvents {
-    border: 2px solid turquoise;
-    /* width: 320px;
-    height: auto; */
-    display: flex;
-    flex-direction: column;
-    /* overflow: scroll; */
-    overflow-y: scroll; 
-    align-items: flex-start;
+    width: 320px;
+    height: 700px;
+    box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
+    /* overflow-y: scroll;  */
 
 }
 
@@ -79,23 +75,32 @@ header {
     padding: 3px 10px;
 }
 .event-item-container img {
-    width: 100%;
-    height: 55%;
-    display: block; 
+    width: 220px;
+    height: 100px;
+    display: block;
     border-radius: 10px;
     margin-bottom: 3px;
+    object-fit: cover;
 }
 
-.event-item-container-item , .all-event-item-container{
+.event-item-contaier-item {
     font-family: InterMedium;
     width: 100%;
 }
-.event-item-container-item h1 , .all-event-item-container h1{
-    font-size: 13px;
-    color: pink;
+
+.all-event-item-container{
+    font-family: InterMedium;
+    width: 100%;
 }
-.event-item-container-item h2 , .all-event-item-container h2{
+.event-item-contaier-item h1,.all-event-item-container h1{
     font-size: 13px;
+    margin-bottom: 2px;
+  
+}
+.event-item-contaier-item h2, .all-event-item-container h2{
+    font-size: 13px;
+    margin-bottom: 2px;
+
 }
 .locationContainer {
     display: flex;
@@ -129,7 +134,7 @@ header {
     text-align: center;
     padding: 10px 10px 0px 10px;
     margin-bottom: 20px;
-    gap: 9em;
+    gap: 7em;
 }
 .nearbyContainer p {
     font-size: 15px;
@@ -138,7 +143,7 @@ header {
 
 /* allEvents */
 .allEventsTitel h2{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding:  10px;
     font-family: InterMedium;
     font-size: 18px;
