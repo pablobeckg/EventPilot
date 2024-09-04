@@ -142,24 +142,25 @@ const Home = () => {
 
   return (
     <>
-    <header>
-      <div className="logo">
-          <img src="/Logo.png" alt="Logo" />
+    <div className="eventBase">
+      <div className="eventTop">
+        <div className="logo">
+            <img src="/Logo.png" alt="Logo" />
+        </div>
+        <select className="locationSelection"
+              name="location"
+              id="location-select"
+              value={selectedLocation || ""}
+              onChange={(e) => setSelectedLocation(e.target.value)}
+            >
+              <option value="">All Locations</option>
+              {locations.map((location) => (
+                <option key={location.id} value={location.id}>
+                  {location.location_name}
+                </option>
+              ))}
+        </select>
       </div>
-      <select className="locationSelection"
-            name="location"
-            id="location-select"
-            value={selectedLocation || ""}
-            onChange={(e) => setSelectedLocation(e.target.value)}
-          >
-            <option value="">All Locations</option>
-            {locations.map((location) => (
-              <option key={location.id} value={location.id}>
-                {location.location_name}
-              </option>
-            ))}
-      </select>
-    </header>
   <main className="event-list-container">
     <div>
       <h2 className="upcomingEventTitel">Upcoming Events</h2>
@@ -176,7 +177,7 @@ const Home = () => {
               <h1>{event.event_title}</h1>
               <div className="locationContainer"><img src="/Registered.png" alt="registeredImg" /><img className="mapPin" src="/MapPin.png" alt="mapPin" /><h2>{event.locations?.location_name}</h2></div>
               </Link>
-              </div>
+            </div>
           </article>
         
       ))}
@@ -195,9 +196,9 @@ const Home = () => {
                   <Link to={`event/${event.id}`}>
                   <h2>{event.event_date} {event.event_start_time}</h2>
                   <h1>{event.event_title}</h1>
-                  <h2>{event.locations?.location_name}</h2>
+                  <div className="locationContainer"><img src="/Registered.png" alt="registeredImg" /><img className="mapPin" src="/MapPin.png" alt="mapPin" /><h2>{event.locations?.location_name}</h2></div>
                   </Link>
-                  </div>
+                </div>
               </article>
             
           ))}
@@ -248,6 +249,7 @@ const Home = () => {
     </div>
 
   </main>
+  </div>
   </>
 );
 };
