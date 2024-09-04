@@ -1,17 +1,3 @@
-/* .body {
-    background-color: #DADADA;
-    min-width: 320px;
-    min-height: 100vh;
-    letter-spacing: 1px;
-    padding: 0 20px 30px 20px;
-}
-
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-} */
 
 .logo {
     margin: 20px;
@@ -33,11 +19,6 @@ header {
     color: #5D3EDE;
 }
 
-.event-list-container {
-    /* width: 320px;
-    height: 350px; */
-
-}
 
 .scrollEvents {
     border: 2px solid red;

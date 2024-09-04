@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { useUserContext } from "../../context/UserContext";
 import UnfavoriteIcon from "../../assets/svg/UnfavoriteIcon";
 import FavoriteIcon from "../../assets/svg/FavoriteIcon";
+import "./SearchPage.css"
 
 const SearchPage = () => {
   const [locations, setLocations] = useState<Location[]>([]);
@@ -139,8 +140,8 @@ const SearchPage = () => {
 
   return (
     <div className="search-page-container">
-      <header>
-        <select
+      <header className="searchHeader">
+        <select className="selectLocation"
           name="location"
           id="location-select"
           value={selectedLocation || ""}
@@ -153,14 +154,17 @@ const SearchPage = () => {
             </option>
           ))}
         </select>
-        <input
-          id="title-search"
-          type="text"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Suche nach Titel"
-        />
-        <div>
+        <div className="lupeContainer">
+          <img className="lupe" src="/Bulb.png" alt="searchImg" />
+          <input className="search"
+            id="title-search"
+            type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="Search..."
+          />
+        </div>
+        <div className="categoriesButton">
           {categories.map((category) => (
             <button
               key={category.id}
@@ -172,19 +176,25 @@ const SearchPage = () => {
           ))}
         </div>
       </header>
-      <main>
+      <main className="seachResultContainer">
+        <div className="scrollAllResults">
         {events.length === 0 && <p>No Events yet</p>}
         {events &&
           events.length > 0 &&
           events.map((event) => (
-            <article className="event-item-container" key={event.id}>
+            <article className="eventResultcontainer" key={event.id}>
               <Link to={`event/${event.id}`}>
-                <h2>
-                  {event.event_date} {event.event_start_time}
-                </h2>
-                <h1>{event.event_title}</h1>
-                <h2>{event.locations?.location_name}</h2>
                 <img src={event.event_image} alt="" />
+                <div className="results">
+                  <h2>
+                    {event.event_date} {event.event_start_time}
+                  </h2>
+                  <h1>{event.event_title}</h1>
+                  <div className="locationContainer">
+                    <img className="mapPin" src="/MapPin.png" alt="mapPin" />
+                    <h2>{event.locations?.location_name}</h2>
+                  </div>
+                </div>
               </Link>
               <div className="event-favorite-icon">
                 <button
@@ -207,6 +217,7 @@ const SearchPage = () => {
               </div>
             </article>
           ))}
+          </div>
       </main>
     </div>
   );
