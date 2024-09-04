@@ -202,22 +202,27 @@ const Home = () => {
             
           ))}
     </div>
-    <div>
+    <div className="allEventsTitel">
       <h2>all Events</h2>
     </div>
-    <div>
+    <div className="scrollAllEvents">
         {events.length === 0 && <p>No Events yet</p>}
         {events &&
           events.length > 0 &&
           events.map((event) => (
-            <article className="event-item-container" key={event.id}>
+            <article className="all-event-item-container" key={event.id}>
               <Link to={`event/${event.id}`}>
-                <h2>
-                  {event.event_date} {event.event_start_time}
-                </h2>
-                <h1>{event.event_title}</h1>
-                <h2>{event.locations?.location_name}</h2>
                 <img src={event.event_image} alt="" />
+                <div className="eventInfo">
+                  <h2>
+                    {event.event_date} {event.event_start_time}
+                  </h2>
+                  <h1>{event.event_title}</h1>
+                  <div className="locationContainer">
+                    <img className="mapPin" src="/MapPin.png" alt="mapPin" />
+                    <h2>{event.locations?.location_name}</h2>
+                  </div>
+                </div>
               </Link>
               <div className="event-favorite-icon">
                 <button
