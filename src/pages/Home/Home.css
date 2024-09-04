@@ -4,7 +4,6 @@
     min-height: 100vh;
     letter-spacing: 1px;
     padding: 0 20px 30px 20px;
-
 }
 
 header {
@@ -34,22 +33,20 @@ header {
     color: #5D3EDE;
 }
 
-
 .event-list-container {
     width: 320px;
     height: 500px;
     display: flex;
+    flex-direction: column;
     overflow: scroll;
     align-items: flex-start;
-    /* position: absolute; */
 }
 
-.footer-container {
-    border: 2px solid green;
-    margin-bottom: -37.5rem;
-
-    /* bottom: 120px; */
+.scrollEvents {
+    display: flex;
+    border: 2px solid red;
 }
+
 
 /* je card */
 
@@ -66,6 +63,7 @@ header {
     overflow: scroll;
     align-items: center;
     padding: 3px 10px;
+    border: 2px solid red;
 }
 .event-item-container img {
     width: 100%;
@@ -98,11 +96,32 @@ header {
     height: 100%;
 }
 
-.all-events-list{
+.all-events-l{
     background-color: aqua;
 }
 
 .all-events-item-container{
     max-width: 100%;
     background-color: red;
+}
+
+
+/* nearby */
+
+.nearbyEventTitel {
+    margin-bottom: 20px;
+    padding: 10px 10px 0px 10px;
+    font-family: InterMedium;
+    font-size: 18px;
+}
+
+.nearbyContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.nearbyContainer p {
+    font-size: 15px;
+    font-family: InterThin;
 }
