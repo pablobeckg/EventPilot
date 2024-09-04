@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { useUserContext } from "../../context/UserContext";
 import UnfavoriteIcon from "../../assets/svg/UnfavoriteIcon";
 import FavoriteIcon from "../../assets/svg/FavoriteIcon";
+import "./SearchPage.css"
 
 const SearchPage = () => {
   const [locations, setLocations] = useState<Location[]>([]);
@@ -139,27 +140,31 @@ const SearchPage = () => {
 
   return (
     <div className="search-page-container">
-      <header>
+      <header className="search-header">
         <select
+        className="select-location"
           name="location"
           id="location-select"
           value={selectedLocation || ""}
           onChange={(e) => setSelectedLocation(e.target.value)}
         >
-          <option value="">All Locations</option>
+          <option value="">Current Location</option>
           {locations.map((location) => (
             <option key={location.id} value={location.id}>
               {location.location_name}
             </option>
           ))}
         </select>
+        <div>
         <input
           id="title-search"
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Suche nach Titel"
+          placeholder="Search"
         />
+        </div>
+        
         <div>
           {categories.map((category) => (
             <button

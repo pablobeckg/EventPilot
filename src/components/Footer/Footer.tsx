@@ -7,6 +7,7 @@ import ExploreIcon from "../../assets/svg/ExploreIcon";
 
 const Footer = () => {
   return (
+    <footer>
     <div className="footer-container">
       <NavLink className="add-event-button" to="addevent">
         <img src="/Plus.png" alt="Add event logo" />
@@ -26,6 +27,7 @@ const Footer = () => {
         </NavLink>
       </div>
     </div>
+    </footer>
   );
 };
 

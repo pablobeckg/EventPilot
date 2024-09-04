@@ -79,6 +79,7 @@ const Home = () => {
       let selectQuery = supabaseClient
         .from("events")
         .select("*, categories(*), locations(*), venues(*), favorites(*)")
+        .limit(5)
         .eq("favorites.user_id", user.id);
 
       const result = await selectQuery;

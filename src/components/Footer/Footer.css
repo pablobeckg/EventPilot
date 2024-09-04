@@ -1,6 +1,11 @@
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
 .footer-container {
     height: 67px;
-    min-width: 320px;
+    min-width: 375px;
     display: flex;
     justify-content: center;
     position: relative;

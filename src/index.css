@@ -24,19 +24,16 @@
 }
 
 body {
-  display: flex;
-  min-width: 320px;
-  min-height: 100vh;
   padding: 2rem;
+  min-width: 375px;
   background-color: gainsboro;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
 }
 
 a {
   text-decoration: none;
   color: black;
-}
-
-a:hover {
-  color: orange;
 }
 

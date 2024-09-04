@@ -35,7 +35,7 @@
     text-align: center;
 }
 
-.profile-page button, input::file-selector-button {
+.profile-page button, .profile-page input::file-selector-button {
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,0 +1,19 @@
+.search-page-container {
+    background-color: white;
+}
+
+.search-header {
+    background-color: #5D3EDE;
+    height: 174px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select-location {
+    background-color: transparent;
+    color: white;
+    margin-top: 1rem;
+    border: none;
+}

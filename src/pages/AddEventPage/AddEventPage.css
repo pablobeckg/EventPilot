@@ -1,6 +1,59 @@
 .add-event-container {
-    min-width: 320px;
-    min-height: 100vh;
-    letter-spacing: 1px;
-    padding: 0 20px 30px 20px;
+  min-width: 320px;
+  min-height: 100vh;
+  letter-spacing: 1px;
+  padding: 1rem;
+}
+
+.add-event-container h2 {
+    font-family: "InterMedium";
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.add-event-container h2 span {
+    color: #00ECAA;
+}
+
+.input-image::file-selector-button {
+  background-color: transparent;
+  display: block;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.upload-image-container {
+  display: flex;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.upload-image-container svg {
+    margin-right: 1rem;
+}
+
+.upload-image-container svg path{
+fill: gray;
+}
+
+.add-event-container input,
+.add-event-container select,
+.add-event-container textarea {
+  border: none;
+  background-color: transparent;
+}
+.addevent-input {
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 10px;
+}
+.text-input {
+  align-self: start;
+}
+
+.addevent-input:hover {
+  background-color: #5d3ede;
 }

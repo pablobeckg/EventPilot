@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import supabaseClient from "../../lib/supabaseClient";
 import { Category, Location, Venue } from "../../types/supabase-types-own";
 import "./AddEventPage.css";
+import CameraIcon from "../../assets/svg/CameraIcon";
 
 const AddEventPage = () => {
   const [eventName, setEventName] = useState<string>("");
@@ -175,14 +176,16 @@ const AddEventPage = () => {
 
   return (
     <div className="add-event-container">
-      <h2>Add Event</h2>
+      <header className="add-event-header">
+        <h2>Add <span>Event</span></h2>
+      </header>
+      
       <form className="signup-form" onSubmit={handleAddEvent}>
-        <div className="upload-container">
-          <label>Upload event image:</label>
-          <br />
+        <div className="upload-image-container">
+          <CameraIcon/>
           <input
             type="file"
-            className="input-file"
+            className="input-image"
             accept="image/*"
             name="image"
             onChange={(e) => {
@@ -192,7 +195,8 @@ const AddEventPage = () => {
             }}
           />
         </div>
-
+        <div className="addevent-input">
+          <img src="/Name.png" alt="" />
         <input
           type="text"
           value={eventName}
@@ -201,6 +205,9 @@ const AddEventPage = () => {
           name="name"
           required
         />
+        </div>
+        <div className="addevent-input">
+        <img src="/Name.png" alt="" />
          <select
           name="category"
           id="category-select"
@@ -214,6 +221,29 @@ const AddEventPage = () => {
             </option>
           ))}
         </select>
+        </div>
+        <div className="addevent-input">
+        <img src="/Location.png" alt="" />
+        <input
+          type="text"
+          value={locationInput}
+          onChange={(e) => setLocationInput(e.target.value)}
+          placeholder="Location"
+          name="location"
+          required
+        />
+        </div>
+        <div className="addevent-input">
+        <img src="/Location.png" alt="" />
+        <input
+          type="text"
+          value={venueInput}
+          onChange={(e) => setVenueInput(e.target.value)}
+          placeholder="Venue"
+          name="venue"
+          required
+        />
+        </div>
         <input
           type="date"
           value={eventDate}
@@ -230,14 +260,7 @@ const AddEventPage = () => {
           name="start-time"
           required
         />
-        <input
-          type="text"
-          value={venueInput}
-          onChange={(e) => setVenueInput(e.target.value)}
-          placeholder="Venue"
-          name="venue"
-          required
-        />
+       
         <input
           type="time"
           value={eventFinishTime}
@@ -246,15 +269,9 @@ const AddEventPage = () => {
           name="finish-time"
           required
         />
-        <input
-          type="text"
-          value={locationInput}
-          onChange={(e) => setLocationInput(e.target.value)}
-          placeholder="Location"
-          name="location"
-          required
-        />
-        <textarea
+       <div className="addevent-input">
+       <img src="/Name.png" alt="" />
+        <textarea className=""
           value={about}
           onChange={(e) => setAbout(e.target.value)}
           placeholder="About"
@@ -262,6 +279,7 @@ const AddEventPage = () => {
           rows={5}
           maxLength={1000}
         />
+        </div>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         {successMessage && <p className="success-message">{successMessage}</p>}
         <button type="submit">ADD</button>
