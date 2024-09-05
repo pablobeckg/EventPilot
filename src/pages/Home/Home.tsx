@@ -230,19 +230,21 @@ const Home = () => {
               events.map((event) => (
                 <article className="all-event-item-container" key={event.id}>
                   <Link to={`event/${event.id}`}>
-                    <img src={event.event_image} alt="" />
-                    <div className="eventInfo">
-                      <h2>
-                        {event.event_date} {event.event_start_time}
-                      </h2>
-                      <h1>{event.event_title}</h1>
-                      <div className="locationContainer">
-                        <img
-                          className="mapPin"
-                          src="/MapPin.png"
-                          alt="mapPin"
-                        />
-                        <h2>{event.locations?.location_name}</h2>
+                    <div className="eventInfoWrap">
+                      <img src={event.event_image} alt="" />
+                      <div className="eventInfo">
+                        <h2>
+                          {event.event_date} {event.event_start_time}
+                        </h2>
+                        <h1>{event.event_title}</h1>
+                        <div className="locationContainer">
+                          <img
+                            className="mapPin"
+                            src="/MapPin.png"
+                            alt="mapPin"
+                          />
+                          <h2>{event.locations?.location_name}</h2>
+                        </div>
                       </div>
                     </div>
                   </Link>
