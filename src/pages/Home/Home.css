@@ -142,39 +142,6 @@
     font-size: 18px;
 }
 
-.all-event-item-container {
-    width: 375px;
-    height: 100px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.all-event-item-container img {
-    width: 120px;
-    object-fit: cover;
-    height: 80px;
-    border-radius: 10px;
-}
-
-.eventInfo {
-    display: flex;
-    flex-direction: column;
-    padding: 0 10px;
-    gap: 10px;
-}
-
-.eventInfoWrap {
-    width: 340px;
-    display: flex;
-    position: relative;
-    align-items: center;
-    box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
-    border-radius: 10px;
-}
-
-.event-favorite-icon {
-    margin-left: -70px;
-}
-.all-event-item-container h2:nth-child(1) {
-    color: #668BE9;
+.all-events {
+    padding: 0 2rem;
 }

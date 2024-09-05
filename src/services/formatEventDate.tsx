@@ -23,7 +23,7 @@ function formatEventDate(dateString: string) {
     const minutes = date.getMinutes().toString().padStart(2, "0");
     const ampm = date.getHours() >= 12 ? "PM" : "AM";
   
-    const formattedDate = `${day}${getOrdinalSuffix(day)} ${month} - ${dayOfWeek.toUpperCase()} - ${hour}:${minutes} ${ampm}`;
+    const formattedDate = `${dayOfWeek.toUpperCase()} ${day}${getOrdinalSuffix(day)} ${month} - ${hour}:${minutes} ${ampm}`;
     
     return formattedDate.toLocaleUpperCase();
   }

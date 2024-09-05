@@ -6,6 +6,7 @@ import { EventComplete, Location } from "../../types/supabase-types-own";
 import { useUserContext } from "../../context/UserContext";
 import FavoriteIcon from "../../assets/svg/FavoriteIcon";
 import UnfavoriteIcon from "../../assets/svg/UnfavoriteIcon";
+import formatEventDate from "../../services/formatEventDate";
 
 const Home = () => {
   const [upcomingEvents, setupcomingEvents] = useState<EventComplete[]>([]);
@@ -74,7 +75,6 @@ const Home = () => {
       let selectQuery = supabaseClient
         .from("events")
         .select("*, categories(*), locations(*), venues(*), favorites(*)")
-        .limit(5)
         .eq("favorites.user_id", user.id);
 
       const result = await selectQuery;
@@ -221,53 +221,52 @@ const Home = () => {
               ))}
           </div>
           <div className="allEventsTitel">
-            <h2>all Events</h2>
+            <h2>All Events</h2>
           </div>
-          <div className="scrollAllEvents">
+          <div className="all-events">
             {events.length === 0 && <p>No Events yet</p>}
             {events &&
               events.length > 0 &&
               events.map((event) => (
-                <article className="all-event-item-container" key={event.id}>
-                  <Link to={`event/${event.id}`}>
-                    <div className="eventInfoWrap">
-                      <img src={event.event_image} alt="" />
-                      <div className="eventInfo">
-                        <h2>
-                          {event.event_date} {event.event_start_time}
-                        </h2>
-                        <h1>{event.event_title}</h1>
-                        <div className="locationContainer">
-                          <img
-                            className="mapPin"
-                            src="/MapPin.png"
-                            alt="mapPin"
-                          />
-                          <h2>{event.locations?.location_name}</h2>
+                <Link to={`event/${event.id}`}>
+                  <div className="event-item-style" key={event.id}>
+                    <img src={event.event_image} alt="" />
+                    <div className="information-container">
+                      <div>
+                        <div className="event-favorite-top">
+                          <h3>
+                            {formatEventDate(
+                              `${event.event_date} ${event.event_start_time}`
+                            )}
+                          </h3>
+                          <button
+                            onClick={() =>
+                              event.favorites?.find(
+                                (favorite) => favorite.event_id === event.id
+                              )
+                                ? deleteFavorite(event.id)
+                                : addFavorite(event.id)
+                            }
+                          >
+                            {event.favorites?.find(
+                              (favorite) => favorite.event_id === event.id
+                            ) ? (
+                              <FavoriteIcon />
+                            ) : (
+                              <UnfavoriteIcon />
+                            )}
+                          </button>
                         </div>
+                        <h2>{event.event_title}</h2>
+                      </div>
+
+                      <div className="event-location">
+                        <img src="/Location.png" alt="" />
+                        <h3>{event.locations?.location_name}</h3>
                       </div>
                     </div>
-                  </Link>
-                  <div className="event-favorite-icon">
-                    <button
-                      onClick={() =>
-                        event.favorites?.find(
-                          (favorite) => favorite.event_id === event.id
-                        )
-                          ? deleteFavorite(event.id)
-                          : addFavorite(event.id)
-                      }
-                    >
-                      {event.favorites?.find(
-                        (favorite) => favorite.event_id === event.id
-                      ) ? (
-                        <FavoriteIcon />
-                      ) : (
-                        <UnfavoriteIcon />
-                      )}
-                    </button>
                   </div>
-                </article>
+                </Link>
               ))}
           </div>
         </main>

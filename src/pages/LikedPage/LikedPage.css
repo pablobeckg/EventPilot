@@ -17,6 +17,7 @@
     display: flex;
     margin-bottom: 0.5rem;
     box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
+    border-radius: 1rem;
 }
 
 .event-item-style > img {
@@ -36,8 +37,8 @@
 }
 .information-container h2 {
     font-family: "InterMedium";
-    font-size: 1.2rem;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 500;
     padding: 0;
 }
 
@@ -50,9 +51,11 @@
 }
 
 .event-favorite-top h3 {
-    color: blue;
+    color: #5669FF;
     padding: 0;
-    font-size: 0.8rem;
+    font-size: 12px;
+    font-family: "InterMedium";
+    font-weight: 500;
 }
 
 .event-favorite-top button {
@@ -73,5 +76,7 @@
 }
 
 .event-location h3 {
-    padding: 0
+    padding: 0;
+    font-size: 13px;
+    font-weight: 100;
 }

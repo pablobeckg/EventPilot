@@ -5,12 +5,14 @@ import supabaseClient from "../../lib/supabaseClient";
 import FavoriteIcon from "../../assets/svg/FavoriteIcon";
 import "./LikedPage.css";
 import formatEventDate from "../../services/formatEventDate";
+import { Link } from "react-router-dom";
 
 const LikedPage = () => {
   const [events, setEvents] = useState<EventComplete[]>([]);
   const [likedEventIds, setLikedEventIds] = useState<string[]>([]);
   const userContext = useUserContext();
   const user = userContext?.user;
+  
   
 
   if (!user) {
@@ -77,7 +79,9 @@ const LikedPage = () => {
         <p>No favorite events found.</p>
       ) : (
         favoriteEvents.map((event) => (
+          <Link to={`event/${event.id}`}>
           <div className="event-item-style" key={event.id}>
+            
             <img src={event.event_image} alt="" />
             <div className="information-container">
               <div>
@@ -96,6 +100,7 @@ const LikedPage = () => {
               </div>
             </div>
           </div>
+          </Link>
         ))
       )}
     </div>
