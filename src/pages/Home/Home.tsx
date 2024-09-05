@@ -7,7 +7,7 @@ import { useUserContext } from "../../context/UserContext";
 import FavoriteIcon from "../../assets/svg/FavoriteIcon";
 import UnfavoriteIcon from "../../assets/svg/UnfavoriteIcon";
 import formatEventDate from "../../services/formatEventDate";
-import { formatDate } from "../../services/FormatDate";
+import { formatDate } from "../../services/formatDate";
 const eventDate = "2024-09-25";
 const { day, month } = formatDate(eventDate);
 
