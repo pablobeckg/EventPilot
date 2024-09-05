@@ -9,7 +9,7 @@ import UnfavoriteIcon from "../../assets/svg/UnfavoriteIcon";
 import formatEventDate from "../../services/formatEventDate";
 import { formatDate } from "../../services/FormatDate";
 const eventDate = "2024-09-25";
-  const { day, month } = formatDate(eventDate);
+const { day, month } = formatDate(eventDate);
 
 const Home = () => {
   const [upcomingEvents, setupcomingEvents] = useState<EventComplete[]>([]);
@@ -19,8 +19,7 @@ const Home = () => {
   const [events, setEvents] = useState<EventComplete[]>([]);
   const userContext = useUserContext();
   const user = userContext?.user;
-  
-  
+
   if (!user) {
     return;
   }
@@ -141,32 +140,28 @@ const Home = () => {
   };
 
   return (
-    <>
-      <div className="eventBase">
-        <div className="eventTop">
-          <div className="logo">
-            <img src="/Logo.png" alt="Logo" />
-          </div>
-          <select
-            className="locationSelection"
-            name="location"
-            id="location-select"
-            value={selectedLocation || ""}
-            onChange={(e) => setSelectedLocation(e.target.value)}
-          >
-            <option value="">Current Location</option>
-            {locations.map((location) => (
-              <option key={location.id} value={location.id}>
-                {location.location_name}
-              </option>
-            ))}
-          </select>
-        </div>
-        <main className="event-list-container">
-          <div>
-            <h2 className="upcomingEventTitel">Upcoming Events</h2>
-          </div>
-          <div className="scrollEvents">
+    <div className="home-container">
+      <header className="home-header">
+        <img className="home-header-image" src="/Logo.png" alt="Logo" />
+        <select
+          className="locationSelection"
+          name="location"
+          id="location-select"
+          value={selectedLocation || ""}
+          onChange={(e) => setSelectedLocation(e.target.value)}
+        >
+          <option value="">Current Location</option>
+          {locations.map((location) => (
+            <option key={location.id} value={location.id}>
+              {location.location_name}
+            </option>
+          ))}
+        </select>
+      </header>
+      <main className="event-list-container">
+        <section className="upcoming-events">
+          <h2 className="section-title">Upcoming Events</h2>
+          <div className="scroll-to-right">
             {upcomingEvents.length === 0 && <p>No Events yet</p>}
             {upcomingEvents &&
               upcomingEvents.length > 0 &&
@@ -178,20 +173,23 @@ const Home = () => {
                       backgroundImage: `url(${event.event_image})`,
                       backgroundSize: "cover",
                       backgroundPosition: "center",
-                      height: "300px",
                     }}
                   >
                     <div className="date-for-image">
-                    <h2>{day}</h2>
-                    <h3>{month}</h3>
+                      <h2>{day}</h2>
+                      <h3>{month}</h3>
                     </div>
                   </div>
 
-                  <div className="event-item-contaier-item">
+                  <div className="item-information">
                     <Link to={`event/${event.id}`}>
                       <h1>{event.event_title}</h1>
                       <div className="locationContainer">
-                        <img src="/Registered.png" alt="registeredImg" />
+                        <img
+                          className="event-followers"
+                          src="/Registered.png"
+                          alt="registeredImg"
+                        />
                         <img
                           className="mapPin"
                           src="/MapPin.png"
@@ -204,25 +202,42 @@ const Home = () => {
                 </article>
               ))}
           </div>
-          <div className="nearbyContainer">
-            <h2 className="nearbyEventTitel">Nearby You</h2>
+        </section>
+
+        <section className="upcoming-events">
+          <div className="nearby-seeall">
+            <h2 className="section-title">Nearby You</h2>
             <p>See All</p>
           </div>
-          <div className="scrollEvents">
+          <div className="scroll-to-right">
             {nearby.length === 0 && <p>No Events yet</p>}
             {nearby &&
               nearby.length > 0 &&
               nearby.map((event) => (
                 <article className="event-item-container" key={event.id}>
-                  <img src={event.event_image} alt="EventImgPlaceholder" />
-                  <div className="event-item-contaier-item">
+                  <div
+                    className="event-image-and-date"
+                    style={{
+                      backgroundImage: `url(${event.event_image})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  >
+                    <div className="date-for-image">
+                      <h2>{day}</h2>
+                      <h3>{month}</h3>
+                    </div>
+                  </div>
+
+                  <div className="item-information">
                     <Link to={`event/${event.id}`}>
-                      <h2>
-                        {event.event_date} {event.event_start_time}
-                      </h2>
                       <h1>{event.event_title}</h1>
                       <div className="locationContainer">
-                        <img src="/Registered.png" alt="registeredImg" />
+                        <img
+                          className="event-followers"
+                          src="/Registered.png"
+                          alt="registeredImg"
+                        />
                         <img
                           className="mapPin"
                           src="/MapPin.png"
@@ -235,58 +250,58 @@ const Home = () => {
                 </article>
               ))}
           </div>
-          <div className="allEventsTitel">
-            <h2>All Events</h2>
-          </div>
-          <div className="all-events">
-            {events.length === 0 && <p>No Events yet</p>}
-            {events &&
-              events.length > 0 &&
-              events.map((event) => (
-                <Link to={`event/${event.id}`}>
-                  <div className="event-item-style" key={event.id}>
-                    <img src={event.event_image} alt="" />
-                    <div className="information-container">
-                      <div>
-                        <div className="event-favorite-top">
-                          <h3>
-                            {formatEventDate(
-                              `${event.event_date} ${event.event_start_time}`
-                            )}
-                          </h3>
-                          <button
-                            onClick={() =>
-                              event.favorites?.find(
-                                (favorite) => favorite.event_id === event.id
-                              )
-                                ? deleteFavorite(event.id)
-                                : addFavorite(event.id)
-                            }
-                          >
-                            {event.favorites?.find(
-                              (favorite) => favorite.event_id === event.id
-                            ) ? (
-                              <FavoriteIcon />
-                            ) : (
-                              <UnfavoriteIcon />
-                            )}
-                          </button>
-                        </div>
-                        <h2>{event.event_title}</h2>
+        </section>
+        <div className="allEventsTitel">
+          <h2 className="section-title">All Events</h2>
+        </div>
+        <div className="all-events">
+          {events.length === 0 && <p>No Events yet</p>}
+          {events &&
+            events.length > 0 &&
+            events.map((event) => (
+              <div className="event-item-style" key={event.id}>
+                <button
+                  onClick={() =>
+                    event.favorites?.find(
+                      (favorite) => favorite.event_id === event.id
+                    )
+                      ? deleteFavorite(event.id)
+                      : addFavorite(event.id)
+                  }
+                >
+                  {event.favorites?.find(
+                    (favorite) => favorite.event_id === event.id
+                  ) ? (
+                    <FavoriteIcon />
+                  ) : (
+                    <UnfavoriteIcon />
+                  )}
+                </button>
+                <Link className="link-to-event" to={`event/${event.id}`}>
+                  <img src={event.event_image} alt="" />
+                  <div className="information-container">
+                    <div>
+                      <div className="event-favorite-top">
+                        <h3>
+                          {formatEventDate(
+                            `${event.event_date} ${event.event_start_time}`
+                          )}
+                        </h3>
                       </div>
 
-                      <div className="event-location">
-                        <img src="/Location.png" alt="" />
-                        <h3>{event.locations?.location_name}</h3>
-                      </div>
+                      <h2>{event.event_title}</h2>
+                    </div>
+                    <div className="event-location">
+                      <img src="/Location.png" alt="" />
+                      <h3>{event.locations?.location_name}</h3>
                     </div>
                   </div>
                 </Link>
-              ))}
-          </div>
-        </main>
-      </div>
-    </>
+              </div>
+            ))}
+        </div>
+      </main>
+    </div>
   );
 };
 

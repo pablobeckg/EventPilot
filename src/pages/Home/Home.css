@@ -1,152 +1,67 @@
-.eventBase {
-  background-color: #ffffff;
-  letter-spacing: 1px;
-  /* padding: 0 0 30px 20px; */
-  width: 375px;
+.home-container {
+  background-color: white;
+  height: 583px;
+  overflow: scroll;
 }
 
-.eventTop {
+.home-header {
   display: flex;
-  justify-content: center;
   align-items: center;
-  position: relative;
+  margin: 1rem;
 }
 
-.logo {
-  margin: 20px;
-  margin-right: auto;
+.home-header img {
+  margin-right: 0;
 }
 
-.upcomingEventTitel {
-  margin-bottom: 10px;
-  padding: 0 10px;
-  font-family: InterMedium;
-  font-size: 18px;
-}
 .locationSelection {
-  margin-right: 100px;
-  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
   border-style: none;
   font-size: 12px;
   font-family: InterThin;
   color: #5d3ede;
 }
 
-.event-list-container {
-  height: 32em;
-  overflow-y: scroll;
+.section-title {
+  font-family: InterMedium;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  margin-left: 1rem;
 }
 
-.scrollEvents {
-  height: 170px;
+.scroll-to-right {
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+  height: 218px;
   display: flex;
+  align-items: center;
   flex-direction: row;
-  overflow-x: scroll;
-  align-items: flex-start;
-  white-space: nowrap;
+  overflow: scroll;
+  gap: 1rem;
 }
-
-.scrollAllEvents {
-  height: 520px;
-  box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
-}
-
-/* je card */
 
 .event-item-container {
-  margin-right: 1rem;
-  width: 220px;
-  height: 165px;
+  height: 90%;
+  width: 237px;
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
+  box-shadow: 0px 1px 15px rgba(93, 62, 222, 0.1);
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow: scroll;
-  align-items: center;
-  padding: 3px 10px;
-}
-.event-item-container img {
-  width: 220px;
-  height: 100px;
-  display: block;
-  border-radius: 10px;
-  margin-bottom: 3px;
-  object-fit: cover;
-}
-
-.event-item-contaier-item {
-  font-family: InterMedium;
-  width: 100%;
-}
-
-.all-event-item-container {
-  font-family: InterMedium;
-  width: 100%;
-}
-.event-item-contaier-item h1,
-.all-event-item-container h1 {
-  font-size: 13px;
-  margin-bottom: 2px;
-}
-.event-item-contaier-item h2,
-.all-event-item-container h2 {
-  font-size: 13px;
-  margin-bottom: 2px;
-}
-.locationContainer {
-  display: flex;
-  gap: 10px;
-}
-.locationContainer img {
-  width: 80px;
-  height: 100%;
-}
-.locationContainer .mapPin {
-  width: 10px;
-  height: 100%;
-}
-
-.all-events-item-container {
-  max-width: 100%;
-  background-color: red;
-}
-
-/* nearby */
-.nearbyEventTitel {
-  font-family: InterMedium;
-  font-size: 18px;
-}
-.nearbyContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  padding: 10px 10px 0px 10px;
-  margin-bottom: 20px;
-  gap: 7em;
-}
-.nearbyContainer p {
-  font-size: 15px;
-  font-family: InterThin;
-}
-
-/* allEvents */
-.allEventsTitel h2 {
-  margin-bottom: 10px;
-  padding: 10px;
-  font-family: InterMedium;
-  font-size: 18px;
-}
-
-.all-events {
-  padding: 0 2rem;
 }
 
 .event-image-and-date {
   width: 100%;
+  height: 131px;
   display: flex;
   justify-content: right;
+  border-radius: 10px;
+  
 }
 
 .date-for-image {
@@ -155,8 +70,55 @@
   color: #5d3ede;
   text-align: center;
   border-radius: 10px;
+  margin: 0.2rem;
 }
 
 .date-for-image h3 {
   padding: 0;
+}
+
+.item-information {
+  width: 95%;
+}
+
+.item-information h1 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 2px;
+  
+}
+.locationContainer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.locationContainer .event-followers {
+  width: 90px;
+  height: 100%;
+  margin-right: 1rem;
+}
+
+.locationContainer h2 {
+  font-size: 13px;
+  font-weight: 100;
+  font-family: "InterThin";
+  color: #2b2849;
+}
+
+.nearby-seeall {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 2rem;
+}
+
+.nearby-seeall p {
+  font-family: "InterThin";
+  color: #848484;
+  font-size: 14px;
+}
+
+.all-events {
+    margin-top: 0.5rem;
+    margin: 0 2rem;
 }

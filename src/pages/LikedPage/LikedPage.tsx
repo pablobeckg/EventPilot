@@ -12,8 +12,6 @@ const LikedPage = () => {
   const [likedEventIds, setLikedEventIds] = useState<string[]>([]);
   const userContext = useUserContext();
   const user = userContext?.user;
-  
-  
 
   if (!user) {
     return;
@@ -79,28 +77,31 @@ const LikedPage = () => {
         <p>No favorite events found.</p>
       ) : (
         favoriteEvents.map((event) => (
-          <Link to={`event/${event.id}`}>
           <div className="event-item-style" key={event.id}>
-            
-            <img src={event.event_image} alt="" />
-            <div className="information-container">
-              <div>
-                <div className="event-favorite-top">
-                  <h3>{formatEventDate(`${event.event_date} ${event.event_start_time}`)}</h3>
-                  <button onClick={() => deleteFavorite(event.id)}>
-                    <FavoriteIcon />
-                  </button>
+            <button onClick={() => deleteFavorite(event.id)}>
+              <FavoriteIcon />
+            </button>
+            <Link className="link-to-event" to={`event/${event.id}`}>
+              <img src={event.event_image} alt="" />
+              <div className="information-container">
+                <div>
+                  <div className="event-favorite-top">
+                    <h3>
+                      {formatEventDate(
+                        `${event.event_date} ${event.event_start_time}`
+                      )}
+                    </h3>
+                  </div>
+                  <h2>{event.event_title}</h2>
                 </div>
-                <h2>{event.event_title}</h2>
-              </div>
 
-              <div className="event-location">
-                <img src="/Location.png" alt="" />
-                <h3>{event.locations?.location_name}</h3>
+                <div className="event-location">
+                  <img src="/Location.png" alt="" />
+                  <h3>{event.locations?.location_name}</h3>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
-          </Link>
         ))
       )}
     </div>
