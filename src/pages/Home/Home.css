@@ -1,25 +1,26 @@
-.home-container {
-  background-color: white;
-  height: 583px;
+.event-list-container {
+  flex-grow: 1;
   overflow: scroll;
 }
 
 .home-header {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
   margin: 1rem;
 }
-
-.home-header img {
-  margin-right: 0;
+.select-location {
+  text-align: center;
+  width: 100%;
 }
 
 .locationSelection {
   margin-left: auto;
   margin-right: auto;
   border-style: none;
-  font-size: 12px;
-  font-family: InterThin;
+  font-weight: 500;
+  font-size: 13px;
+  font-family: "InterMedium";
   color: #5d3ede;
 }
 
@@ -46,7 +47,9 @@
   height: 90%;
   width: 237px;
   border-radius: 10px;
-  box-shadow: 0px 1px 15px rgba(93, 62, 222, 0.1);
+  box-shadow: 0px 8px 30px 0px rgba(93, 61, 222, 0.050);
+
+
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -91,6 +94,13 @@
   display: flex;
   gap: 10px;
   align-items: center;
+}
+
+.select-location h2 {
+  font-size: 12px;
+  font-family: "InterThin";
+  font-weight: 100;
+  color: #5D3EDE;
 }
 
 .locationContainer .event-followers {

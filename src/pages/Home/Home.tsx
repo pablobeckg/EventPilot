@@ -15,7 +15,9 @@ const Home = () => {
   const [upcomingEvents, setupcomingEvents] = useState<EventComplete[]>([]);
   const [nearby, setNearby] = useState<EventComplete[]>([]);
   const [locations, setLocations] = useState<Location[]>([]);
-  const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
+  const [selectedLocation, setSelectedLocation] = useState<string | null>(
+    "ca513963-db50-4b8a-8468-56c07b0eddc3"
+  );
   const [events, setEvents] = useState<EventComplete[]>([]);
   const userContext = useUserContext();
   const user = userContext?.user;
@@ -140,23 +142,25 @@ const Home = () => {
   };
 
   return (
-    <div className="home-container">
+    <>
       <header className="home-header">
         <img className="home-header-image" src="/Logo.png" alt="Logo" />
-        <select
-          className="locationSelection"
-          name="location"
-          id="location-select"
-          value={selectedLocation || ""}
-          onChange={(e) => setSelectedLocation(e.target.value)}
-        >
-          <option value="">Current Location</option>
-          {locations.map((location) => (
-            <option key={location.id} value={location.id}>
-              {location.location_name}
-            </option>
-          ))}
-        </select>
+        <div className="select-location">
+          <h2>Current Location</h2>
+          <select
+            className="locationSelection"
+            name="location"
+            id="location-select"
+            value={selectedLocation || ""}
+            onChange={(e) => setSelectedLocation(e.target.value)}
+          >
+            {locations.map((location) => (
+              <option key={location.id} value={location.id}>
+                {location.location_name}
+              </option>
+            ))}
+          </select>
+        </div>
       </header>
       <main className="event-list-container">
         <section className="upcoming-events">
@@ -166,23 +170,23 @@ const Home = () => {
             {upcomingEvents &&
               upcomingEvents.length > 0 &&
               upcomingEvents.map((event) => (
-                <article className="event-item-container" key={event.id}>
-                  <div
-                    className="event-image-and-date"
-                    style={{
-                      backgroundImage: `url(${event.event_image})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  >
-                    <div className="date-for-image">
-                      <h2>{day}</h2>
-                      <h3>{month}</h3>
+                <Link to={`event/${event.id}`}>
+                  <article className="event-item-container" key={event.id}>
+                    <div
+                      className="event-image-and-date"
+                      style={{
+                        backgroundImage: `url(${event.event_image})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
+                    >
+                      <div className="date-for-image">
+                        <h2>{day}</h2>
+                        <h3>{month}</h3>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="item-information">
-                    <Link to={`event/${event.id}`}>
+                    <div className="item-information">
                       <h1>{event.event_title}</h1>
                       <div className="locationContainer">
                         <img
@@ -197,9 +201,9 @@ const Home = () => {
                         />
                         <h2>{event.locations?.location_name}</h2>
                       </div>
-                    </Link>
-                  </div>
-                </article>
+                    </div>
+                  </article>
+                </Link>
               ))}
           </div>
         </section>
@@ -214,23 +218,23 @@ const Home = () => {
             {nearby &&
               nearby.length > 0 &&
               nearby.map((event) => (
-                <article className="event-item-container" key={event.id}>
-                  <div
-                    className="event-image-and-date"
-                    style={{
-                      backgroundImage: `url(${event.event_image})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  >
-                    <div className="date-for-image">
-                      <h2>{day}</h2>
-                      <h3>{month}</h3>
+                <Link to={`event/${event.id}`}>
+                  <article className="event-item-container" key={event.id}>
+                    <div
+                      className="event-image-and-date"
+                      style={{
+                        backgroundImage: `url(${event.event_image})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
+                    >
+                      <div className="date-for-image">
+                        <h2>{day}</h2>
+                        <h3>{month}</h3>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="item-information">
-                    <Link to={`event/${event.id}`}>
+                    <div className="item-information">
                       <h1>{event.event_title}</h1>
                       <div className="locationContainer">
                         <img
@@ -245,9 +249,9 @@ const Home = () => {
                         />
                         <h2>{event.locations?.location_name}</h2>
                       </div>
-                    </Link>
-                  </div>
-                </article>
+                    </div>
+                  </article>
+                </Link>
               ))}
           </div>
         </section>
@@ -301,7 +305,7 @@ const Home = () => {
             ))}
         </div>
       </main>
-    </div>
+    </>
   );
 };
 

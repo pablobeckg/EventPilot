@@ -1,11 +1,10 @@
 .liked-page-container {
     background-color: white;
-    height: 550px;
-    padding: 1.5rem;
+    padding: 1.5rem  1.5rem 0  1.5rem;
+    overflow: scroll;
+    flex-grow: 1;
     overflow: scroll;
 }
-
-
 .liked-page-container > h1 {
     text-align: center;
     font-size: 1.5rem;
@@ -14,10 +13,9 @@
 }
 
 .event-item-style {
-    box-shadow: 1px;
     display: flex;
     margin-bottom: 0.5rem;
-    box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
+    box-shadow: 0px 8px 30px 0px rgba(93, 61, 222, 0.050);
     border-radius: 1rem;
     position: relative;
 }

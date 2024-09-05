@@ -1,106 +1,119 @@
 .event-detail-container {
-    display: flex;
-    max-height: 600px;
-    flex-direction: column;
-    background-color: #fff;
-    font-family: InterThin;
-    overflow-y: scroll;
+  display: flex;
+  max-height: 600px;
+  flex-direction: column;
+  background-color: #fff;
+  font-family: InterThin;
+  overflow-y: scroll;
 }
 
-.single-event-detail-wrapper{
-    padding: 1em;
-    width: 90%;
-    height: 100%;
+.single-event-detail-wrapper {
+  padding: 1em;
+  width: 90%;
+  height: 100%;
 }
 
-.single-event-img-container{
-    height: 225px;
-    position: relative;
-    margin-top: -90px;
-    z-index: 0;
+.single-event-img-container {
+  height: 225px;
+  position: relative;
+  margin-top: -90px;
+  z-index: 0;
 }
 
-.single-event-img-container img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.single-event-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.single-event-interest-container{
-    width: 50%;
-    text-align: center;
-    margin: -1.5em auto;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 0.5em 0.75em;
-    box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
-    position: relative;
+.single-event-interest-container {
+  width: 50%;
+  text-align: center;
+  margin: -1.5em auto;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 0.5em 0.75em;
+  box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
+  position: relative;
 }
 
-.single-event-interest-container img{
-    width: 100%;
+.single-event-interest-container img {
+  width: 100%;
 }
 
-.single-event-detail-wrapper h2{
-    margin: 1em 0;
+.single-event-detail-wrapper h2 {
+  margin: 1em 0;
 }
 
-.single-event-icon{
-    width: 50px;
-    height: 50px;
+.single-event-icon {
+  width: 50px;
+  height: 50px;
 }
 
 .single-event-date-time-container,
-.single-event-venue-location-container{
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    margin-top: 1em;
+.single-event-venue-location-container {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-top: 1em;
 }
 
 .single-event-date-info-text,
-.single-event-location-info-text{
-    display: flex;
-    flex-direction: column;
+.single-event-location-info-text {
+  display: flex;
+  flex-direction: column;
 }
 
-.date-icon{
-    background-image: url("/single-event-location.png");
-    background-repeat: no-repeat;
+.date-icon {
+  background-image: url("/single-event-location.png");
+  background-repeat: no-repeat;
 }
 
-.location-icon{
-    background-image: url("/single-event-date.png");
-    background-repeat: no-repeat;
+.location-icon {
+  background-image: url("/single-event-date.png");
+  background-repeat: no-repeat;
 }
 
-.single-event-detail-text{
-    margin: 2em 0;
+.single-event-detail-text {
+  margin: 2em 0;
 }
 
-.event-detail-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10;
-    background: linear-gradient(0deg, rgba(255,255,255,0) 43%, rgba(0,0,0,1) 100%);
-    min-height: 90px;
+.event-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0) 43%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  min-height: 90px;
 }
 
-.event-detail-header h2{
-    z-index: 10;
-    position: relative;
-    color: #fff;
+.event-detail-header h2 {
+  z-index: 10;
+  position: relative;
+  color: #fff;
 }
 
-.event-detail-container .event-detail-header button{
-    position: relative;
-    padding: 0.5em;
-    margin: 1em;
+.event-detail-container .event-detail-header button {
+  position: relative;
+  padding: 0.5em;
+  margin: 1em;
+
+  border: none;
 }
 
-.prev-btn{
-    position: relative;
-    padding: 0.25em;
-    margin: 1em;
+.favorites-button {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.prev-btn {
+  position: relative;
+  padding: 0.25em;
+  margin: 1em;
+  background-color: transparent;
+  border: none;
 }

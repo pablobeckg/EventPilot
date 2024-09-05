@@ -1,81 +1,80 @@
 footer {
-    position: absolute;
-    bottom: 0;
+  position: absolute;
+  bottom: 0;
+  height: 67px;
+  min-width: 375px;
+  box-shadow: 0 -4px 8px 0 rgba(157, 178, 214, 0.13);
 }
 
 .footer-container {
-    height: 67px;
-    min-width: 375px;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    background-color: white;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-color: white;
 }
 
 .add-event-button {
-    width: 46px;
-    height: 46px;
-    position: absolute;
-    top:-23px;
-    border-radius: 50px;
+  width: 46px;
+  height: 46px;
+  position: absolute;
+  top: -23px;
+  border-radius: 50px;
 }
 
-.add-event-button img{
-    position: relative;
-    top: -12px;
-    left: -20px;
+.add-event-button img {
+  position: relative;
+  top: -12px;
+  left: -20px;
 }
 
 .buttons-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
 }
 
 .active.explore-icon svg g,
-.active.explore-icon svg g circle, .active.explore-icon svg g .svg-text {
-    opacity: 1;
-  
-    fill: #5D3EDE;
+.active.explore-icon svg g circle,
+.active.explore-icon svg g .svg-text {
+  opacity: 1;
+
+  fill: #5d3ede;
 }
 
-.active.search-icon svg g  {
-    opacity: 1;
+.active.search-icon svg g {
+  opacity: 1;
 }
 .active.search-icon svg g .glass {
-    stroke: #5D3EDE;
-    opacity: 1;
+  stroke: #5d3ede;
+  opacity: 1;
 }
 
 .active.search-icon svg g .search-text {
-    fill: #5D3EDE;
+  fill: #5d3ede;
 }
 
-.active.profile-icon svg g ellipse, .active.profile-icon svg g, .active.profile-icon svg path {
-    opacity: 1;
-    fill: #5D3EDE;
+.active.profile-icon svg g ellipse,
+.active.profile-icon svg g,
+.active.profile-icon svg path {
+  opacity: 1;
+  fill: #5d3ede;
 }
-.active.profile-icon svg g ellipse{
-    stroke: #5D3EDE;
+.active.profile-icon svg g ellipse {
+  stroke: #5d3ede;
 }
-.active.profile-icon svg g  .half-circle{
-    stroke: #5D3EDE;
-    fill: #5D3EDE;
+.active.profile-icon svg g .half-circle {
+  stroke: #5d3ede;
+  fill: #5d3ede;
 }
-
 
 .active.events-icon path {
-    opacity: 1;
-    fill: #5D3EDE;
+  opacity: 1;
+  fill: #5d3ede;
 }
 
 .active.events-icon .top-events {
-    opacity: 1;
-    fill: #5D3EDE;
-    stroke: #5D3EDE;
+  opacity: 1;
+  fill: #5d3ede;
+  stroke: #5d3ede;
 }
-
-
-
-

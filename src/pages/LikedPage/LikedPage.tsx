@@ -71,7 +71,7 @@ const LikedPage = () => {
   };
 
   return (
-    <div className="liked-page-container">
+    <main className="liked-page-container">
       <h1>Liked Events</h1>
       {events.length === 0 ? (
         <p>No favorite events found.</p>
@@ -104,7 +104,7 @@ const LikedPage = () => {
           </div>
         ))
       )}
-    </div>
+    </main>
   );
 };
 

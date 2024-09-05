@@ -10,6 +10,7 @@ import { useUserContext } from "../../context/UserContext";
 import UnfavoriteIcon from "../../assets/svg/UnfavoriteIcon";
 import FavoriteIcon from "../../assets/svg/FavoriteIcon";
 import "./SearchPage.css"
+import formatEventDate from "../../services/formatEventDate";
 
 const SearchPage = () => {
   const [locations, setLocations] = useState<Location[]>([]);
@@ -139,21 +140,24 @@ const SearchPage = () => {
   };
 
   return (
-    <div className="search-page-container">
-      <header className="searchHeader">
-        <select className="selectLocation"
-          name="location"
-          id="location-select"
-          value={selectedLocation || ""}
-          onChange={(e) => setSelectedLocation(e.target.value)}
-        >
-          <option value="">All Locations</option>
-          {locations.map((location) => (
-            <option key={location.id} value={location.id}>
-              {location.location_name}
-            </option>
-          ))}
-        </select>
+    <>
+      <header className="search-header">
+      <div className="search-location">
+          <h2>Current Location</h2>
+          <select
+            className="locationSearch"
+            name="location"
+            id="location-select"
+            value={selectedLocation || ""}
+            onChange={(e) => setSelectedLocation(e.target.value)}
+          >
+            {locations.map((location) => (
+              <option key={location.id} value={location.id}>
+                {location.location_name}
+              </option>
+            ))}
+          </select>
+        </div>
         <div className="lupeContainer">
           <img className="lupe" src="/Bulb.png" alt="searchImg" />
           <input className="search"
@@ -177,26 +181,12 @@ const SearchPage = () => {
         </div>
       </header>
       <main className="seachResultContainer">
-        <div className="scrollAllResults">
-        {events.length === 0 && <p>No Events yet</p>}
-        {events &&
-          events.length > 0 &&
-          events.map((event) => (
-            <article className="eventResultcontainer" key={event.id}>
-              <Link to={`event/${event.id}`}>
-                <img src={event.event_image} alt="" />
-                <div className="results">
-                  <h2>
-                    {event.event_date} {event.event_start_time}
-                  </h2>
-                  <h1>{event.event_title}</h1>
-                  <div className="locationContainer">
-                    <img className="mapPin" src="/MapPin.png" alt="mapPin" />
-                    <h2>{event.locations?.location_name}</h2>
-                  </div>
-                </div>
-              </Link>
-              <div className="event-favorite-icon">
+      <div className="all-events">
+          {events.length === 0 && <p>No Events yet</p>}
+          {events &&
+            events.length > 0 &&
+            events.map((event) => (
+              <div className="event-item-style" key={event.id}>
                 <button
                   onClick={() =>
                     event.favorites?.find(
@@ -214,12 +204,31 @@ const SearchPage = () => {
                     <UnfavoriteIcon />
                   )}
                 </button>
+                <Link className="link-to-event" to={`event/${event.id}`}>
+                  <img src={event.event_image} alt="" />
+                  <div className="information-container">
+                    <div>
+                      <div className="event-favorite-top">
+                        <h3>
+                          {formatEventDate(
+                            `${event.event_date} ${event.event_start_time}`
+                          )}
+                        </h3>
+                      </div>
+
+                      <h2>{event.event_title}</h2>
+                    </div>
+                    <div className="event-location">
+                      <img src="/Location.png" alt="" />
+                      <h3>{event.locations?.location_name}</h3>
+                    </div>
+                  </div>
+                </Link>
               </div>
-            </article>
-          ))}
-          </div>
+            ))}
+        </div>
       </main>
-    </div>
+    </>
   );
 };
 
