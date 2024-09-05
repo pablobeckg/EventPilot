@@ -33,11 +33,33 @@ const EventDetailPage = () => {
 
   return (
     <main className="event-detail-container">
-      <h1>{event?.event_title}</h1>
-      <h2>{event?.event_date}</h2>
-      <h2>{event?.event_start_time}{event?.event_finish_time}</h2>
-      <h2>{event?.venues?.venue_name}</h2>
-      <h2>{event?.locations?.location_name}</h2>
+      <div className="single-event-img-container">
+      <img src={event?.event_image} alt="EventImgPlaceholder" />
+      </div>
+      <div className="single-event-interest-container">
+      <img src="/also-registered.png" alt="registeredImg" />
+      </div>
+      <div className="single-event-detail-wrapper">
+      <h2>{event?.event_title}</h2>
+      <div className="single-event-date-time-container">
+        <div className="single-event-icon date-icon"></div>
+        <div className="single-event-date-info-text">
+      <p><b>{event?.event_date}</b></p>
+      <p>{event?.event_start_time} - {event?.event_finish_time}</p>
+      </div>
+      </div>
+      <div className="single-event-venue-location-container">
+      <div className="single-event-icon location-icon"></div>
+      <div className="single-event-location-info-text">
+      <p><b>{event?.venues?.venue_name}</b></p>
+      <p>{event?.locations?.location_name}</p>
+      </div>
+      </div>
+      <div className="single-event-detail-text">
+        <p><b>About Event</b></p>
+        <p>{event?.event_info}</p>
+      </div>
+      </div>
     </main>
   );
 };
