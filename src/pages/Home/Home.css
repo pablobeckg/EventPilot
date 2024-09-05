@@ -1,7 +1,8 @@
 .eventBase {
     background-color: #ffffff;
     letter-spacing: 1px;
-    padding: 0 0 30px 20px;
+    /* padding: 0 0 30px 20px; */
+    width: 375px;
 }
 
 .eventTop {
@@ -33,24 +34,22 @@
 
 .event-list-container {
     height: 32em;
-    overflow-y: scroll; 
+    overflow-y: scroll;
 }
 
 .scrollEvents {
     height: 170px;
     display: flex;
     flex-direction: row;
-    overflow-x: scroll; 
+    overflow-x: scroll;
     align-items: flex-start;
-    white-space: nowrap; 
+    white-space: nowrap;
 
 }
 
 .scrollAllEvents {
-    height: 700px;
+    height: 520px;
     box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
-    /* overflow-y: scroll;  */
-
 }
 
 
@@ -90,7 +89,7 @@
 .event-item-contaier-item h1,.all-event-item-container h1{
     font-size: 13px;
     margin-bottom: 2px;
-  
+
 }
 .event-item-contaier-item h2, .all-event-item-container h2{
     font-size: 13px;
@@ -117,7 +116,6 @@
 
 
 /* nearby */
-
 .nearbyEventTitel {
     font-family: InterMedium;
     font-size: 18px;
@@ -145,27 +143,38 @@
 }
 
 .all-event-item-container {
-    width: 320px;
+    width: 375px;
     height: 100px;
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+    justify-content: space-around;
 }
 
 .all-event-item-container img {
-    width: 100px;
-    height: 100%;
+    width: 120px;
+    object-fit: cover;
+    height: 80px;
     border-radius: 10px;
 }
 
 .eventInfo {
     display: flex;
     flex-direction: column;
-    margin-left: 100px;
-    padding: 15px;
-    gap: 15px;
+    padding: 0 10px;
+    gap: 10px;
 }
 
+.eventInfoWrap {
+    width: 340px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
+    border-radius: 10px;
+}
+
+.event-favorite-icon {
+    margin-left: -70px;
+}
 .all-event-item-container h2:nth-child(1) {
     color: #668BE9;
 }
