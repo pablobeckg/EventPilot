@@ -149,32 +149,20 @@ export type Database = {
         Row: {
           about_me: string | null
           avatar_url: string | null
-          created_at: string
-          first_name: string
-          followers: number | null
-          following: number | null
           id: string
-          last_name: string
+          name: string | null
         }
         Insert: {
           about_me?: string | null
           avatar_url?: string | null
-          created_at?: string
-          first_name: string
-          followers?: number | null
-          following?: number | null
-          id?: string
-          last_name: string
+          id: string
+          name?: string | null
         }
         Update: {
           about_me?: string | null
           avatar_url?: string | null
-          created_at?: string
-          first_name?: string
-          followers?: number | null
-          following?: number | null
           id?: string
-          last_name?: string
+          name?: string | null
         }
         Relationships: [
           {
