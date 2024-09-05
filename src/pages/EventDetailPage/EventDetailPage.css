@@ -16,7 +16,7 @@
 .single-event-img-container{
     height: 225px;
     position: relative;
-    margin-top: -4em;
+    margin-top: -90px;
     z-index: 0;
 }
 
@@ -78,10 +78,29 @@
     margin: 2em 0;
 }
 
-.event-detail-container .event-favorite-icon button{
-    float: right;
-    position: relative;
+.event-detail-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     z-index: 10;
+    background: linear-gradient(0deg, rgba(255,255,255,0) 43%, rgba(0,0,0,1) 100%);
+    min-height: 90px;
+}
+
+.event-detail-header h2{
+    z-index: 10;
+    position: relative;
+    color: #fff;
+}
+
+.event-detail-container .event-detail-header button{
+    position: relative;
     padding: 0.5em;
+    margin: 1em;
+}
+
+.prev-btn{
+    position: relative;
+    padding: 0.25em;
     margin: 1em;
 }
