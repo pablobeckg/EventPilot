@@ -15,6 +15,9 @@
 
 .single-event-img-container{
     height: 225px;
+    position: relative;
+    margin-top: -4em;
+    z-index: 0;
 }
 
 .single-event-img-container img{
@@ -31,6 +34,7 @@
     border-radius: 10px;
     padding: 0.5em 0.75em;
     box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
+    position: relative;
 }
 
 .single-event-interest-container img{
@@ -44,12 +48,20 @@
 .single-event-icon{
     width: 50px;
     height: 50px;
-    padding: 1em 1em 0 0;
 }
 
 .single-event-date-time-container,
 .single-event-venue-location-container{
     display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.single-event-date-info-text,
+.single-event-location-info-text{
+    display: flex;
+    flex-direction: column;
 }
 
 .date-icon{
@@ -64,4 +76,12 @@
 
 .single-event-detail-text{
     margin: 2em 0;
+}
+
+.event-detail-container .event-favorite-icon button{
+    float: right;
+    position: relative;
+    z-index: 10;
+    padding: 0.5em;
+    margin: 1em;
 }
