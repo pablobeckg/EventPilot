@@ -7,6 +7,9 @@ import { useUserContext } from "../../context/UserContext";
 import FavoriteIcon from "../../assets/svg/FavoriteIcon";
 import UnfavoriteIcon from "../../assets/svg/UnfavoriteIcon";
 import formatEventDate from "../../services/formatEventDate";
+import { formatDate } from "../../services/FormatDate";
+const eventDate = "2024-09-25";
+  const { day, month } = formatDate(eventDate);
 
 const Home = () => {
   const [upcomingEvents, setupcomingEvents] = useState<EventComplete[]>([]);
@@ -16,7 +19,8 @@ const Home = () => {
   const [events, setEvents] = useState<EventComplete[]>([]);
   const userContext = useUserContext();
   const user = userContext?.user;
-
+  
+  
   if (!user) {
     return;
   }
@@ -150,7 +154,7 @@ const Home = () => {
             value={selectedLocation || ""}
             onChange={(e) => setSelectedLocation(e.target.value)}
           >
-            <option value="">All Locations</option>
+            <option value="">Current Location</option>
             {locations.map((location) => (
               <option key={location.id} value={location.id}>
                 {location.location_name}
@@ -168,12 +172,23 @@ const Home = () => {
               upcomingEvents.length > 0 &&
               upcomingEvents.map((event) => (
                 <article className="event-item-container" key={event.id}>
-                  <img src={event.event_image} alt="EventImgPlaceholder" />
+                  <div
+                    className="event-image-and-date"
+                    style={{
+                      backgroundImage: `url(${event.event_image})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      height: "300px",
+                    }}
+                  >
+                    <div className="date-for-image">
+                    <h2>{day}</h2>
+                    <h3>{month}</h3>
+                    </div>
+                  </div>
+
                   <div className="event-item-contaier-item">
                     <Link to={`event/${event.id}`}>
-                      <h2>
-                        {event.event_date} {event.event_start_time}
-                      </h2>
                       <h1>{event.event_title}</h1>
                       <div className="locationContainer">
                         <img src="/Registered.png" alt="registeredImg" />
