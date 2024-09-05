@@ -25,10 +25,13 @@
 .lupeContainer .search {
     font-size: 20.33px;
 }
+.lupeContainer .search::placeholder {
+    color: #FFFFFF;
+}
 .selectLocation, .search {
     background: none;
     border: none;
-    color: rgb(255, 255, 255);
+    color: #FFFFFF;
     font-size: 12px;
     font-family: InterThin;
 }
@@ -60,6 +63,12 @@
     border: none;
 }
 
+
+.categoriesButton button:focus {
+    background-color: #00ECAA;
+    color: #1F1F1F;
+}
+
 .seachResultContainer{
     width: 320px;
     height: 32em;
@@ -74,8 +83,6 @@
 
 
 .eventResultcontainer {
-    
-
     width: 320px;
     height: 100px;
     display: flex;
