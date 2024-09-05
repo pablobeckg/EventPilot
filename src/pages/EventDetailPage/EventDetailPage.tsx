@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { EventComplete } from "../../types/supabase-types-own";
 import supabaseClient from "../../lib/supabaseClient";
 import "./EventDetailPage.css";
@@ -13,6 +13,8 @@ const EventDetailPage = () => {
   const [events, setEvents] = useState<EventComplete[]>([]);
   const userContext = useUserContext();
   const user = userContext?.user;
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchSingleEvent = async () => {
@@ -89,7 +91,11 @@ const EventDetailPage = () => {
 
   return (
     <main className="event-detail-container">
-      <div className="event-favorite-icon">
+      <div className="event-detail-header">
+      <button className="prev-btn" onClick={() => navigate(-1)}>
+          <img src="/prev-btn.png" alt="go to previous page"></img>
+        </button>
+        <h2>Event Details</h2>
                 <button
                   onClick={() =>
                     event?.favorites?.find(
