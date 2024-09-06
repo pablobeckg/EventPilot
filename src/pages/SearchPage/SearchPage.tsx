@@ -204,7 +204,7 @@ const SearchPage = () => {
                     <UnfavoriteIcon />
                   )}
                 </button>
-                <Link className="link-to-event" to={`event/${event.id}`}>
+                <Link className="link-to-event" to={`/event/${event.id}`}>
                   <img src={event.event_image} alt="" />
                   <div className="information-container">
                     <div>
