@@ -244,6 +244,10 @@ const AddEventPage = () => {
           required
         />
         </div>
+        <div className="dates-imput">
+        <img src="/Location.png" alt="" />
+          <h2>Event Date</h2>
+        
         <input
           type="date"
           value={eventDate}
@@ -252,6 +256,8 @@ const AddEventPage = () => {
           name="date"
           required
         />
+        </div>
+       
         <input
           type="time"
           value={eventStartTime}

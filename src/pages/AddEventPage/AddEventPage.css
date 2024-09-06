@@ -60,3 +60,20 @@ fill: gray;
 .addevent-input:hover {
   background-color: #5d3ede;
 }
+
+.dates-imput {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+
+.dates-imput h2 {
+  margin: 0;
+  font-size: 15px;
+
+}
+
