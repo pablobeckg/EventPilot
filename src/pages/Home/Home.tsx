@@ -8,8 +8,9 @@ import FavoriteIcon from "../../assets/svg/FavoriteIcon";
 import UnfavoriteIcon from "../../assets/svg/UnfavoriteIcon";
 import formatEventDate from "../../services/formatEventDate";
 import { formatDate } from "../../services/formatDate";
-const eventDate = "2024-09-25";
-const { day, month } = formatDate(eventDate);
+
+{/*const eventDate = "2024-09-25";
+const { day, month } = formatDate(eventDate); */}
 
 const Home = () => {
   const [upcomingEvents, setupcomingEvents] = useState<EventComplete[]>([]);
@@ -181,8 +182,8 @@ const Home = () => {
                       }}
                     >
                       <div className="date-for-image">
-                        <h2>{day}</h2>
-                        <h3>{month}</h3>
+                        <h2>{event.event_date.split("-")[2]}</h2>
+                        <h3>{`${new Date(event.event_date).toString().split(" ")[1]}`}</h3>
                       </div>
                     </div>
 
@@ -229,8 +230,8 @@ const Home = () => {
                       }}
                     >
                       <div className="date-for-image">
-                        <h2>{day}</h2>
-                        <h3>{month}</h3>
+                      <h2>{event.event_date.split("-")[2]}</h2>
+                      <h3>{`${new Date(event.event_date).toString().split(" ")[1]}`}</h3>
                       </div>
                     </div>
 

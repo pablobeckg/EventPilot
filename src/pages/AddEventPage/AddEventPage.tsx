@@ -181,8 +181,9 @@ const AddEventPage = () => {
       </header>
       
       <form className="signup-form" onSubmit={handleAddEvent}>
+      <CameraIcon/>
         <div className="upload-image-container">
-          <CameraIcon/>
+          
           <input
             type="file"
             className="input-image"
@@ -265,6 +266,7 @@ const AddEventPage = () => {
           placeholder="Start Time"
           name="start-time"
           required
+          className="event-start-time"
         />
        
         <input
@@ -274,6 +276,7 @@ const AddEventPage = () => {
           placeholder="Finish Time"
           name="finish-time"
           required
+          className="event-end-time"
         />
        <div className="addevent-input">
        <img src="/Name.png" alt="" />
