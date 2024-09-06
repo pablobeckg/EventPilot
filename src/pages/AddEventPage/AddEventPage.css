@@ -3,7 +3,7 @@
   height: 550px;
   letter-spacing: 1px;
   padding: 1rem;
-  background-color: gray;
+  background-color: #fff;
   overflow: scroll;
 }
 
@@ -27,15 +27,20 @@
 .upload-image-container {
   display: flex;
   background-color: white;
-  padding: 1rem;
   border-radius: 10px;
 }
-.upload-image-container svg {
-    margin-right: 1rem;
+
+.signup-form svg path{
+fill: #fff;
 }
 
-.upload-image-container svg path{
-fill: gray;
+.signup-form svg{
+  z-index: 10;
+  margin: 10px 0 0 25px;
+}
+
+.upload-image-container{
+  margin-top: -53px;
 }
 
 .add-event-container input,
@@ -43,23 +48,46 @@ fill: gray;
 .add-event-container textarea {
   border: none;
   background-color: transparent;
+  font-family: InterMedium;
 }
 
-.addevent-input {
+.addevent-input, input[type=date], input[type=time] {
   background-color: white;
   padding: 1rem;
   display: flex;
   align-items: center;
   gap: 1rem;
   border-radius: 10px;
+  box-shadow: 0px 8px 30px 0px rgba(93, 61, 222, 0.050);
+  font-family: InterMedium;
+  color: gray;
 }
 .text-input {
   align-self: start;
 }
 
+.addevent-input select{
+  font-family: InterMedium;
+  color: gray;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+input[type="time"].event-start-time::before {
+  content: 'Start';
+}
+
+input[type="time"].event-end-time::before {
+  content: 'End';
+}
+
+/*
 .addevent-input:hover {
   background-color: #5d3ede;
 }
+*/
 
 .dates-imput {
   display: flex;
@@ -74,6 +102,24 @@ fill: gray;
 .dates-imput h2 {
   margin: 0;
   font-size: 15px;
-
+  color: gray;
 }
 
+.add-event-container button , .add-event-container input::file-selector-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border-style: none;
+  border-radius: 10px;
+  color: white;
+  font-family: InterMedium;
+  font-size: 16px;
+  text-transform: uppercase;
+  background-color: #5D3EDE;
+  height: 3rem;
+  width: 17rem;
+  gap: 10px;
+  padding: 1em 1rem;
+  position: relative;
+}
