@@ -10,7 +10,6 @@ footer {
   display: flex;
   justify-content: center;
   position: relative;
-  background-color: white;
 }
 
 .add-event-button {
