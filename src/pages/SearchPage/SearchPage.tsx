@@ -9,18 +9,24 @@ import { Link } from "react-router-dom";
 import { useUserContext } from "../../context/UserContext";
 import UnfavoriteIcon from "../../assets/svg/UnfavoriteIcon";
 import FavoriteIcon from "../../assets/svg/FavoriteIcon";
-import "./SearchPage.css"
+import "./SearchPage.css";
 import formatEventDate from "../../services/formatEventDate";
+import MusicIcon from "../../assets/svg/MusicIcon";
+import ArtIcon from "../LogInPage/ArtIcon";
+import FoodIcon from "../LogInPage/FoodIcon";
+import SportIcon from "../../assets/svg/SportIcon";
 
 const SearchPage = () => {
   const [locations, setLocations] = useState<Location[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [events, setEvents] = useState<EventComplete[]>([]);
-  const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
+  const [selectedLocation, setSelectedLocation] = useState<string | null>("ca513963-db50-4b8a-8468-56c07b0eddc3");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const userContext = useUserContext();
   const user = userContext?.user;
+
+  console.log(selectedCategory);
 
   if (!user) {
     return;
@@ -79,13 +85,14 @@ const SearchPage = () => {
         setCategories([]);
       } else {
         setCategories(result.data);
+        console.log(categories);
       }
     };
 
     fetchCategories();
   }, []);
 
-   const handleCategoryClick = (categoryId: string) => {
+  const handleCategoryClick = (categoryId: string) => {
     setSelectedCategory((prevCategory) =>
       prevCategory === categoryId ? null : categoryId
     );
@@ -142,7 +149,7 @@ const SearchPage = () => {
   return (
     <>
       <header className="search-header">
-      <div className="search-location">
+        <div className="search-location">
           <h2>Current Location</h2>
           <select
             className="locationSearch"
@@ -160,7 +167,8 @@ const SearchPage = () => {
         </div>
         <div className="lupeContainer">
           <img className="lupe" src="/Bulb.png" alt="searchImg" />
-          <input className="search"
+          <input
+            className="search"
             id="title-search"
             type="text"
             value={searchTerm}
@@ -169,20 +177,71 @@ const SearchPage = () => {
           />
         </div>
         <div className="categoriesButton">
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              className={selectedCategory === category.id ? "active" : ""}
-              onClick={() => handleCategoryClick(category.id)}
-            >
-              {category.category_name}
-            </button>
-          ))}
+          <button
+            className={
+              selectedCategory === "a7f45408-8240-40e4-b2b7-bcd03178bb86"
+                ? "activeCategoryWithStroke"
+                : ""
+            }
+            onClick={() =>
+              handleCategoryClick("a7f45408-8240-40e4-b2b7-bcd03178bb86")
+            }
+          >
+            <MusicIcon /> Music
+          </button>
+          <button
+            className={
+              selectedCategory === "0bf14b29-36fc-4fa7-b6db-c6b07d53e91b"
+                ? "activeCategory"
+                : ""
+            }
+            onClick={() =>
+              handleCategoryClick("0bf14b29-36fc-4fa7-b6db-c6b07d53e91b")
+            }
+          >
+            <ArtIcon /> Art
+          </button>
+          <button
+            className={
+              selectedCategory === "52a83981-a883-4c60-9886-7af4cc19e387"
+                ? "activeCategory"
+                : ""
+            }
+            onClick={() =>
+              handleCategoryClick("52a83981-a883-4c60-9886-7af4cc19e387")
+            }
+          >
+            <SportIcon /> Sport
+          </button>
+          <button
+            className={
+              selectedCategory === "208dc341-9781-4d4d-94ef-0a831c1d475a"
+                ? "activeCategoryWithStroke"
+                : ""
+            }
+            onClick={() =>
+              handleCategoryClick("208dc341-9781-4d4d-94ef-0a831c1d475a")
+            }
+          >
+            <FoodIcon /> Food
+          </button>
+          <button
+            className={
+              selectedCategory === "0b377ab7-3a6f-4a7d-af6d-24c1a9363639"
+                ? "activeCategory"
+                : ""
+            }
+            onClick={() =>
+              handleCategoryClick("0b377ab7-3a6f-4a7d-af6d-24c1a9363639")
+            }
+          >
+            <ArtIcon /> IT
+          </button>
         </div>
       </header>
       <main className="seachResultContainer">
-      <div className="all-events">
-          {events.length === 0 && <p>No Events yet</p>}
+        <div className="all-events">
+          {events.length === 0 && <div className="no-events"><h1>No Upcoming Events</h1><h2>There are no Events yet!</h2></div>}
           {events &&
             events.length > 0 &&
             events.map((event) => (

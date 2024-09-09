@@ -70,11 +70,13 @@ const LikedPage = () => {
     }
   };
 
+  console.log(events)
+
   return (
     <main className="liked-page-container">
       <h1>Liked Events</h1>
-      {events.length === 0 ? (
-        <p>No favorite events found.</p>
+      {likedEventIds.length === 0 ? (
+        <div className="no-events"><h1>No Upcoming Events</h1><h2>There are no Events yet!</h2></div>
       ) : (
         favoriteEvents.map((event) => (
           <div className="event-item-style" key={event.id}>

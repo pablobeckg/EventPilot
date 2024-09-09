@@ -83,11 +83,11 @@ input[type="time"].event-end-time::before {
   content: 'End';
 }
 
-/*
-.addevent-input:hover {
+
+/* .addevent-input:hover {
   background-color: #5d3ede;
-}
-*/
+} */
+
 
 .dates-imput {
   display: flex;

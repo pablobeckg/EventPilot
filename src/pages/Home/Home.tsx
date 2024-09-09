@@ -7,7 +7,7 @@ import { useUserContext } from "../../context/UserContext";
 import FavoriteIcon from "../../assets/svg/FavoriteIcon";
 import UnfavoriteIcon from "../../assets/svg/UnfavoriteIcon";
 import formatEventDate from "../../services/formatEventDate";
-import { formatDate } from "../../services/formatDate";
+
 
 {/*const eventDate = "2024-09-25";
 const { day, month } = formatDate(eventDate); */}
@@ -167,7 +167,7 @@ const Home = () => {
         <section className="upcoming-events">
           <h2 className="section-title">Upcoming Events</h2>
           <div className="scroll-to-right">
-            {upcomingEvents.length === 0 && <p>No Events yet</p>}
+            {upcomingEvents.length === 0 && <div className="no-events"><h1>No Upcoming Events</h1><h2>There are no Events yet!</h2></div>}
             {upcomingEvents &&
               upcomingEvents.length > 0 &&
               upcomingEvents.map((event) => (
