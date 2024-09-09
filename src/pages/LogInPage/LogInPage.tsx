@@ -3,6 +3,7 @@ import "./LogInPage.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useUserContext } from "../../context/UserContext";
 import supabaseClient from "../../lib/supabaseClient";
+import Loading from "../Loading/Loading";
 
 const LogInPage = () => {
   const [email, setEmail] = useState<string>("");
@@ -12,6 +13,7 @@ const LogInPage = () => {
 
   const navigate = useNavigate();
   const userContext = useUserContext();
+  const user = userContext?.user;
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,6 +39,8 @@ const LogInPage = () => {
   };
 
   return (
+    <>
+    {!user ? (<Loading />) : ( 
     <div className="login-container">
       <div className="logoHeader">
         <img src="./Header.png" alt="Header" />
@@ -71,6 +75,8 @@ const LogInPage = () => {
        
       </div>
     </div>
+    )}
+    </>
   );
 };
 
