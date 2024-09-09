@@ -10,11 +10,17 @@ const SignUpPage = () => {
   const [confirmPassword, setConfirmPassword] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [passwordVisible, setPasswordVisible] = useState<boolean>(false);
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage(null);
     setSuccessMessage(null);
+
+    if (password !== confirmPassword) {
+      setErrorMessage("Passwords do not match");
+      return;
+    }
 
     const signupResponse = await supabaseClient.auth.signUp({
       email,
@@ -34,6 +40,9 @@ const SignUpPage = () => {
       setSuccessMessage("Signup successful. Please look into your emails.");
     }
   };
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
 
   return (
     <div className="signup-container">
@@ -42,38 +51,68 @@ const SignUpPage = () => {
       </div>
       <form className="signup-form" onSubmit={handleSignup}>
         <h2>Sign up</h2>
-        <input
-          className="signupInputField"
-          type="text"
-          value={userName}
-          onChange={(e) => setUserName(e.target.value)}
-          placeholder="Enter your name"
-          required
-        />
-        <input
-          className="signupInputField"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email"
-          required
-        />
-        <input
-          className="signupInputField"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Enter your password"
-          required
-        />
-        <input
-          className="signupInputField"
-          type="password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          placeholder="Enter your password again"
-          required
-        />
+        <div className="login-field">
+          <img src="/Profile.png" alt="" />
+          <input
+            type="text"
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+        <div className="login-field">
+          <img src="/Message.png" alt="" />
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div className="loginInputField">
+          <div className="password-input">
+            <img src="/Lock.png" alt="" />
+            <input
+              type={passwordVisible ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <button
+            type="button"
+            className="password-toggle-button"
+            onClick={togglePasswordVisibility}
+          >
+            <img
+              src={passwordVisible ? "/Hidden.png" : "/Visible.png"}
+              alt=""
+            />
+          </button>
+        </div>
+        <div className="loginInputField">
+          <div className="password-input">
+            <img src="/Lock.png" alt="" />
+            <input
+              type={passwordVisible ? "text" : "password"}
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              placeholder="Enter your password again"
+              required
+            />
+          </div>
+
+          <button type="button" onClick={togglePasswordVisibility}>
+            <img
+              src={passwordVisible ? "/Hidden.png" : "/Visible.png"}
+              alt=""
+            />
+          </button>
+        </div>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         {successMessage && <p className="success-message">{successMessage}</p>}
         <div className="button-info-container">

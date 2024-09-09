@@ -12,9 +12,9 @@ import FavoriteIcon from "../../assets/svg/FavoriteIcon";
 import "./SearchPage.css";
 import formatEventDate from "../../services/formatEventDate";
 import MusicIcon from "../../assets/svg/MusicIcon";
-import ArtIcon from "../LogInPage/ArtIcon";
 import FoodIcon from "../LogInPage/FoodIcon";
 import SportIcon from "../../assets/svg/SportIcon";
+import ArtIcon from "../LogInPage/ArtIcon";
 
 const SearchPage = () => {
   const [locations, setLocations] = useState<Location[]>([]);
@@ -27,6 +27,9 @@ const SearchPage = () => {
   const user = userContext?.user;
 
   if (!user) {
+    return;
+  }
+  if(!categories) {
     return;
   }
 

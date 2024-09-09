@@ -1,95 +1,121 @@
 .logoHeader {
-    display: flex;
-    justify-content: center;
-    padding-top: 7vh;
-    padding-bottom: 3vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 7vh;
+  padding-bottom: 3vh;
 }
 
 .login-container {
-    min-width: 320px;
-    flex-grow: 1;
-    height: 10px;
-    padding: 0 20px 30px 20px;
-
+  min-width: 320px;
+  flex-grow: 1;
+  height: 10px;
+  padding: 0 20px 30px 20px;
 }
 .login-form {
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
 .login-form h2 {
-    font-family: InterMedium;
-    font-size: 24px;
-    color: #120D26;
+  font-family: InterMedium;
+  font-size: 24px;
+  color: #120d26;
 }
 
 .loginInputField {
-    border-style: none;
-    box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
-    height: 3rem;
-    width: 17rem;
-    border-radius: 10px;
-}
-.loginInputField::placeholder {
-    padding: 0 10%;
-    color: #A6A6A6;
-    font-family: InterThin;
-    font-size: 14px;
-    padding-left: 10%;
+  display: flex;
+  justify-content: space-between;
+  border-style: none;
+  box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
+  height: 3rem;
+  width: 100%;
+  border-radius: 10px;
 }
 
-.loginInputField:nth-of-type(1) {
-    padding-left: 40px;
-    background: url('../../../public/Message.png') no-repeat 10px center;
-    background-size: 20px 20px;
+.login-field {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-style: none;
+  box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
+  height: 3rem;
+  border-radius: 10px;
+  padding-left: 1rem;
+  
 }
-.loginInputField:nth-of-type(2) {
-    padding-left: 40px;
-    background: url('../../../public/Lock.png') no-repeat 10px center,
-                url('../../../public/Hidden.png') no-repeat right 10px center;
-    background-size: 20px 22px, 20px 20px;
+.password-input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 1rem;
 }
+
+.password-input input {
+  width: 100%;
+}
+.password-input input::placeholder {
+  color: #a6a6a6;
+}
+
+.login-field input::placeholder {
+  color: #a6a6a6;
+}
+
+.loginInputField input,
+.login-field input {
+  border: none;
+  width: 100%;
+}
+.loginInputField button {
+  background-color: transparent;
+  border: none;
+  margin-right: 0.5rem;
+}
+
+
 
 .account-container {
-    position: absolute;
-    bottom: 20px;
-    left: 50px;
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
 }
 
 .loginButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    border-style: none;
-    border-radius: 10px;
-    color: white;
-    font-family: InterMedium;
-    font-size: 16px;
-    text-transform: uppercase;
-    background-color: #5D3EDE;
-    height: 3rem;
-    width: 17rem;
-    gap: 10px;
-    position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border-style: none;
+  border-radius: 10px;
+  color: white;
+  font-family: InterMedium;
+  font-size: 16px;
+  text-transform: uppercase;
+  background-color: #5d3ede;
+  height: 3rem;
+  width: 17rem;
+  gap: 10px;
+  position: relative;
+  cursor: pointer;
 }
 .loginButton img {
-    position: absolute;
-    right: 1rem;
-    height: auto;
-    border: none;
+  position: absolute;
+  right: 1rem;
+  height: auto;
+  border: none;
 }
 
 .reset-password-container h3 {
-    font-family: InterThin;
-    font-size: 15px;
-    padding: 10px 20px;
-    color: #120d26a4;
-    text-align: center;
+  font-family: InterThin;
+  font-size: 15px;
+  padding: 10px 20px;
+  color: #120d26a4;
+  text-align: center;
 }
 
 h3 span {
-    color: #5e3ede97;
+  color: #5e3ede97;
 }
