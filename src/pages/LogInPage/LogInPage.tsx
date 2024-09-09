@@ -11,9 +11,11 @@ const LogInPage = () => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
+
   const navigate = useNavigate();
   const userContext = useUserContext();
   const user = userContext?.user;
+  const loadingPage = userContext?.loadingPage;
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -40,7 +42,7 @@ const LogInPage = () => {
 
   return (
     <>
-    {!user ? (<Loading />) : ( 
+    {!user && loadingPage ? (<Loading />) : ( 
     <div className="login-container">
       <div className="logoHeader">
         <img src="./Header.png" alt="Header" />
