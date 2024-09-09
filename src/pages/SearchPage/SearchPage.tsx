@@ -26,8 +26,6 @@ const SearchPage = () => {
   const userContext = useUserContext();
   const user = userContext?.user;
 
-  console.log(selectedCategory);
-
   if (!user) {
     return;
   }
@@ -85,7 +83,6 @@ const SearchPage = () => {
         setCategories([]);
       } else {
         setCategories(result.data);
-        console.log(categories);
       }
     };
 

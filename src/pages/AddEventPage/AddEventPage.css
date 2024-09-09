@@ -1,19 +1,20 @@
 .add-event-container {
   min-width: 320px;
-  height: 550px;
+  flex-grow: 1;
   letter-spacing: 1px;
   padding: 1rem;
   background-color: #fff;
   overflow: scroll;
+  margin-bottom: 1rem;
 }
 
 .add-event-container h2 {
-    font-family: "InterMedium";
-    text-align: center;
-    margin-bottom: 2rem;
+  font-family: "InterMedium";
+  text-align: center;
+  margin-bottom: 2rem;
 }
 .add-event-container h2 span {
-    color: #00ECAA;
+  color: #00ecaa;
 }
 
 .input-image::file-selector-button {
@@ -30,16 +31,16 @@
   border-radius: 10px;
 }
 
-.signup-form svg path{
-fill: #fff;
+.signup-form svg path {
+  fill: #fff;
 }
 
-.signup-form svg{
+.signup-form svg {
   z-index: 10;
-  margin: 10px 0 0 25px;
+  margin-left: 1rem;
 }
 
-.upload-image-container{
+.upload-image-container {
   margin-top: -53px;
 }
 
@@ -51,14 +52,16 @@ fill: #fff;
   font-family: InterMedium;
 }
 
-.addevent-input, input[type=date], input[type=time] {
+.addevent-input,
+input[type="date"],
+input[type="time"] {
   background-color: white;
   padding: 1rem;
   display: flex;
   align-items: center;
   gap: 1rem;
   border-radius: 10px;
-  box-shadow: 0px 8px 30px 0px rgba(93, 61, 222, 0.050);
+  box-shadow: 0px 8px 30px 0px rgba(93, 61, 222, 0.05);
   font-family: InterMedium;
   color: gray;
 }
@@ -66,7 +69,7 @@ fill: #fff;
   align-self: start;
 }
 
-.addevent-input select{
+.addevent-input select {
   font-family: InterMedium;
   color: gray;
 }
@@ -76,36 +79,25 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 input[type="time"].event-start-time::before {
-  content: 'Start';
+  content: "Start";
 }
 
 input[type="time"].event-end-time::before {
-  content: 'End';
+  content: "End";
 }
 
-
-/* .addevent-input:hover {
-  background-color: #5d3ede;
-} */
-
-
-.dates-imput {
+.date-container {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  padding-left: 1rem;
+  width: 18rem;
   background-color: white;
-  padding: 1rem;
   border-radius: 10px;
+  box-shadow: 0px 8px 30px 0px rgba(93, 61, 222, 0.05);
 }
 
-
-.dates-imput h2 {
-  margin: 0;
-  font-size: 15px;
-  color: gray;
-}
-
-.add-event-container button , .add-event-container input::file-selector-button {
+.add-event-container button,
+.add-event-container input::file-selector-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,10 +108,62 @@ input[type="time"].event-end-time::before {
   font-family: InterMedium;
   font-size: 16px;
   text-transform: uppercase;
-  background-color: #5D3EDE;
+  background-color: #5d3ede;
   height: 3rem;
   width: 17rem;
   gap: 10px;
   padding: 1em 1rem;
   position: relative;
+}
+
+.input-image {
+  display: none;
+}
+
+.custom-file-image {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: auto;
+  border-style: none;
+  border-radius: 10px;
+  color: white;
+  font-family: InterMedium;
+  font-size: 16px;
+  background-color: #5d3ede;
+  height: 3rem;
+  width: 17rem;
+  gap: 1rem;
+  box-shadow: 0px 8px 30px 0px rgba(93, 61, 222, 0.05);
+  margin-top: 2rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.addevent-input img {
+  align-self: self-start;
+}
+
+.text-area {
+  width: 100%;
+}
+
+.dates-input h1 {
+  font-size: 0.83rem;
+  font-weight: 100;
+  color: rgb(116, 116, 116);
+}
+.dates-input {
+  display: flex;
+  width: 18rem;
+  align-items: center;
+  gap: 1rem;
+  background-color: white;
+  padding-left: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 8px 30px 0px rgba(93, 61, 222, 0.05);
+}
+
+input:focus, textarea {
+ outline: none;
 }

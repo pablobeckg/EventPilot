@@ -1,89 +1,119 @@
-.profile-page{
-    display: flex;
-    max-width: 320px;
-    max-height: 600px;
-    padding: 2rem;
-    flex-direction: column;
-    background-color: #fff;
-    font-family: InterThin;
-    overflow-y: scroll;
-  }
-
-.avatar-wrapper{
-    text-align: center;
-    object-fit: cover;
+.profile-page {
+  display: flex;
+  max-width: 320px;
+  max-height: 600px;
+  padding: 2rem;
+  flex-direction: column;
+  background-color: #fff;
+  font-family: InterThin;
+  overflow-y: scroll;
 }
 
-.avatar-image{
-    width: 60%;
-    height: auto;
-    border-radius: 100%;
+.avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
 }
 
-
-.profile-name{
-    text-align: center;
+.avatar-background {
+  text-align: center;
+  object-fit: cover;
+  width: 12rem;
+  height: 12rem;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  background-repeat: no-repeat;
 }
 
-.upload-container{
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+.profile-name {
+  text-align: center;
 }
 
-.label-upload-avatar{
-    text-align: center;
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
-.profile-page button, .profile-page input::file-selector-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    border-style: none;
-    border-radius: 10px;
-    color: white;
-    font-family: InterMedium;
-    font-size: 16px;
-    text-transform: uppercase;
-    background-color: #5D3EDE;
-    height: 3rem;
-    width: 17rem;
-    gap: 10px;
-    padding: 1em 1rem;
-    position: relative;
+.label-upload-avatar {
+  text-align: center;
 }
 
-
-h1{
-    font-family: InterMedium;
+.profile-page button,
+.profile-page input::file-selector-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border-style: none;
+  border-radius: 10px;
+  color: white;
+  font-family: InterMedium;
+  font-size: 16px;
+  text-transform: uppercase;
+  background-color: #5d3ede;
+  height: 3rem;
+  width: 17rem;
+  gap: 10px;
+  padding: 1em 1rem;
+  position: relative;
 }
 
-.profile-about-me-container h2{
-    font-family: InterRegular;
+h1 {
+  font-family: InterMedium;
 }
 
-.about-me-text{
-    font-family: InterThin;
-    margin: 1em 0 3em 0;
-    line-height: 1.5rem;
+.profile-about-me-container h2 {
+  font-family: InterRegular;
 }
 
-.profile-about-me-followers{
-    display: flex;
-    justify-content: space-around;
-    padding: 3em 0;
+.about-me-text {
+  font-family: InterThin;
+  margin: 1em 0 3em 0;
+  line-height: 1.5rem;
 }
 
-.followers, .following{
-    text-align: center;
+.profile-about-me-followers {
+  display: flex;
+  justify-content: space-around;
+  padding: 3em 0;
 }
 
-.follow-counter{
-    font-family: InterRegular;
+.followers,
+.following {
+  text-align: center;
 }
 
-.dash{
-    background-color: #222;
-    width: 1px;
+.follow-counter {
+  font-family: InterRegular;
+}
+
+.dash {
+  background-color: #222;
+  width: 1px;
+}
+
+.input-text {
+  display: none;
+}
+
+.custom-file-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border-style: none;
+  border-radius: 10px;
+  color: white;
+  font-family: InterMedium;
+  font-size: 16px;
+  text-transform: uppercase;
+  background-color: #5d3ede;
+  height: 3rem;
+  width: 17rem;
+  gap: 10px;
+  margin-bottom: 1rem;
+  position: relative;
+  cursor: pointer;
 }

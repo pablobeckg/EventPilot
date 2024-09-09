@@ -66,7 +66,6 @@ const AddEventPage = () => {
     }
   };
 
-
   const addVenue = async (venueName: string) => {
     const venuesInsertResponse = await supabaseClient
       .from("venues")
@@ -91,9 +90,9 @@ const AddEventPage = () => {
     if (!eventImage) return;
 
     if (!selectedCategory) {
-        setErrorMessage("Please select a category.");
-        return;
-      }
+      setErrorMessage("Please select a category.");
+      return;
+    }
 
     const fileName = eventImage.name;
     const uploadEventImageResponse = await supabaseClient.storage
@@ -123,7 +122,6 @@ const AddEventPage = () => {
     if (!locationId && locationInput.trim()) {
       locationId = await addLocation(locationInput.trim());
     }
-
 
     let venueId = venues.find(
       (ven) => ven.venue_name === venueInput.trim()
@@ -177,16 +175,17 @@ const AddEventPage = () => {
   return (
     <div className="add-event-container">
       <header className="add-event-header">
-        <h2>Add <span>Event</span></h2>
+        <h2>
+          Add <span>Event</span>
+        </h2>
       </header>
-      
+
       <form className="signup-form" onSubmit={handleAddEvent}>
-      <CameraIcon/>
         <div className="upload-image-container">
-          
           <input
             type="file"
             className="input-image"
+            id="image-upload"
             accept="image/*"
             name="image"
             onChange={(e) => {
@@ -196,98 +195,109 @@ const AddEventPage = () => {
             }}
           />
         </div>
+        <label htmlFor="image-upload" className="custom-file-image">
+          <CameraIcon /> {eventImage ? eventImage.name : "Image"}
+        </label>
         <div className="addevent-input">
           <img src="/Name.png" alt="" />
-        <input
-          type="text"
-          value={eventName}
-          onChange={(e) => setEventName(e.target.value)}
-          placeholder="Name"
-          name="name"
-          required
-        />
+          <input
+            type="text"
+            value={eventName}
+            onChange={(e) => setEventName(e.target.value)}
+            placeholder="Name"
+            name="name"
+            required
+          />
+        </div>
+
+        <div className="addevent-input">
+          <img src="/Name.png" alt="" />
+          <select
+            name="category"
+            id="category-select"
+            value={selectedCategory || ""}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+          >
+            <option value="">Category</option>
+            {categories.map((category) => (
+              <option key={category.id} value={category.id}>
+                {category.category_name}
+              </option>
+            ))}
+          </select>
         </div>
         <div className="addevent-input">
-        <img src="/Name.png" alt="" />
-         <select
-          name="category"
-          id="category-select"
-          value={selectedCategory || ""}
-          onChange={(e) => setSelectedCategory(e.target.value)}
-        >
-          <option value="">Category</option>
-          {categories.map((category) => (
-            <option key={category.id} value={category.id}>
-              {category.category_name}
-            </option>
-          ))}
-        </select>
+          <img src="/Location.png" alt="" />
+          <input
+            type="text"
+            value={locationInput}
+            onChange={(e) => setLocationInput(e.target.value)}
+            placeholder="Location"
+            name="location"
+            required
+          />
         </div>
         <div className="addevent-input">
-        <img src="/Location.png" alt="" />
-        <input
-          type="text"
-          value={locationInput}
-          onChange={(e) => setLocationInput(e.target.value)}
-          placeholder="Location"
-          name="location"
-          required
-        />
+          <img src="/Location.png" alt="" />
+          <input
+            type="text"
+            value={venueInput}
+            onChange={(e) => setVenueInput(e.target.value)}
+            placeholder="Venue"
+            name="venue"
+            required
+          />
         </div>
+        <div className="dates-input">
+          <img src="/Calender.png" alt="" />
+          <h1>Date</h1>
+          <input
+            type="date"
+            value={eventDate}
+            onChange={(e) => setEventDate(e.target.value)}
+            placeholder="Date"
+            name="date"
+            required
+          />
+        </div>
+
+        <div className="date-container">
+          <img src="/Calender.png" alt="" />
+          <input
+            type="time"
+            value={eventStartTime}
+            onChange={(e) => setEventStartTime(e.target.value)}
+            placeholder="Start Time"
+            name="start-time"
+            required
+            className="event-start-time"
+          />
+        </div>
+
+        <div className="date-container">
+          <img src="/Calender.png" alt="" />
+          <input
+            type="time"
+            value={eventFinishTime}
+            onChange={(e) => setEventFinishTime(e.target.value)}
+            placeholder="Finish Time"
+            name="finish-time"
+            required
+            className="event-end-time"
+          />
+        </div>
+
         <div className="addevent-input">
-        <img src="/Location.png" alt="" />
-        <input
-          type="text"
-          value={venueInput}
-          onChange={(e) => setVenueInput(e.target.value)}
-          placeholder="Venue"
-          name="venue"
-          required
-        />
-        </div>
-        <div className="dates-imput">
-        <img src="/Location.png" alt="" />
-          <h2>Event Date</h2>
-        
-        <input
-          type="date"
-          value={eventDate}
-          onChange={(e) => setEventDate(e.target.value)}
-          placeholder="Date"
-          name="date"
-          required
-        />
-        </div>
-       
-        <input
-          type="time"
-          value={eventStartTime}
-          onChange={(e) => setEventStartTime(e.target.value)}
-          placeholder="Start Time"
-          name="start-time"
-          required
-          className="event-start-time"
-        />
-       
-        <input
-          type="time"
-          value={eventFinishTime}
-          onChange={(e) => setEventFinishTime(e.target.value)}
-          placeholder="Finish Time"
-          name="finish-time"
-          required
-          className="event-end-time"
-        />
-       <div className="addevent-input">
-       <img src="/Name.png" alt="" />
-        <textarea className=""
-          value={about}
-          onChange={(e) => setAbout(e.target.value)}
-          placeholder="About"
-          name="about"
-          rows={5}
-          maxLength={1000}
-        />
+          <img src="/Name.png" alt="" />
+          <textarea
+            className="text-area"
+            value={about}
+            onChange={(e) => setAbout(e.target.value)}
+            placeholder="About"
+            name="about"
+            rows={5}
+            maxLength={1000}
+          />
         </div>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         {successMessage && <p className="success-message">{successMessage}</p>}

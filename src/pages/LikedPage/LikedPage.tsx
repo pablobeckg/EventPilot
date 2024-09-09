@@ -70,7 +70,6 @@ const LikedPage = () => {
     }
   };
 
-  console.log(events)
 
   return (
     <main className="liked-page-container">
