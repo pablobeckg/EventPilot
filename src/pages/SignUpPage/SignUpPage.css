@@ -103,3 +103,8 @@ h3 {
 h3 span {
     color: #5e3ede97;
 }
+
+.button-info-container {
+    position: absolute;
+    bottom: 1rem;
+}

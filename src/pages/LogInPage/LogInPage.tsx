@@ -65,17 +65,21 @@ const LogInPage = () => {
         />
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         {successMessage && <p className="success-message">{successMessage}</p>}
+        <div className="account-container">
         <button className="loginButton" type="submit">Sign in <img src="./Arrow.png" alt="ArrowButton" /></button>
-      </form>
-      <div className="reset-password-container">
+        <div className="reset-password-container">
         {/* <button className="additional-button" onClick={handleResetPassword}>
           Forgot your password?
         </button> */}
         <h3>Don’t have an account?   <Link to="/signup">
         <span>Sign-Up</span>
         </Link></h3>
+        </div>
+       
        
       </div>
+      </form>
+     
     </div>
     )}
     </>

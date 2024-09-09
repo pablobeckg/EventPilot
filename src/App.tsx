@@ -12,7 +12,10 @@ import Footer from "./components/Footer/Footer";
 import AddEventPage from "./pages/AddEventPage/AddEventPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
+
+
 function App() {
+  
   return (
     <UserProvider>
       <BrowserRouter>
