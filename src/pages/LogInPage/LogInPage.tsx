@@ -43,6 +43,24 @@ const LogInPage = () => {
     setPasswordVisible(!passwordVisible);
   };
 
+  const handleResetPassword = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    setErrorMessage(null);
+    setSuccessMessage(null);
+
+    const resetResponse = await supabaseClient.auth.resetPasswordForEmail(email);
+
+    if (resetResponse.error) {
+      console.error(resetResponse.error.message);
+      setErrorMessage(resetResponse.error.message);
+      return;
+    }
+
+    if (resetResponse.data) {
+      setSuccessMessage('Password reset link has been sent to your email.');
+    }
+  };
+
   return (
     <>
       {!user && loadingPage ? (
@@ -86,6 +104,9 @@ const LogInPage = () => {
                 />
               </button>
             </div>
+            <button className="reset-password-button" onClick={handleResetPassword}>
+          Forgot your password?
+        </button>
 
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             {successMessage && (
@@ -95,10 +116,6 @@ const LogInPage = () => {
               <button className="loginButton" type="submit">
                 Sign in <img src="./Arrow.png" alt="ArrowButton" />
               </button>
-
-              {/* <button className="additional-button" onClick={handleResetPassword}>
-          Forgot your password?
-        </button> */}
               <h3>
                 Don’t have an account?{" "}
                 <Link to="/signup">

@@ -119,3 +119,14 @@
 h3 span {
   color: #5e3ede97;
 }
+
+.reset-password-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: InterThin;
+  font-size: 15px;
+  padding: 10px 20px;
+  color: #120d26;
+  text-align: center;
+}
