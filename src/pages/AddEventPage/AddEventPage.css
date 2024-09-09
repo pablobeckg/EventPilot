@@ -130,7 +130,7 @@ input[type="time"].event-end-time::before {
   border-radius: 10px;
   color: white;
   font-family: InterMedium;
-  font-size: 16px;
+  font-size: 13.3px;
   background-color: #5d3ede;
   height: 3rem;
   width: 17rem;
@@ -139,6 +139,7 @@ input[type="time"].event-end-time::before {
   margin-top: 2rem;
   cursor: pointer;
   width: 100%;
+
 }
 
 .addevent-input img {
