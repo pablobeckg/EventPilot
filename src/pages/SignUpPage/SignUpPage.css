@@ -1,7 +1,7 @@
 .signup-container {
     min-width: 320px;
-    min-height: 100vh;
-    letter-spacing: 1px;
+    flex-grow: 1;
+    height: 10px;
     padding: 0 20px 30px 20px;
 }
 
@@ -59,13 +59,13 @@
     padding-left: 5px;
     background: url('../../../public/Lock.png') no-repeat 10px center,
                 url('../../../public/Hidden.png') no-repeat right 10px center;
-    background-size: 17px 15px, 20px 20px;
+    background-size: 17px 17px, 20px 20px;
 }
 .signupInputField:nth-of-type(4) {
     padding-left: 5px;
     background: url('../../../public/Lock.png') no-repeat 10px center,
                 url('../../../public/Hidden.png') no-repeat right 10px center;
-    background-size: 17px 15px, 20px 20px;
+    background-size: 17px 17px, 20px 20px;
 }
 
 .signupButton {
@@ -83,7 +83,6 @@
     height: 3rem;
     width: 17rem;
     gap: 10px;
-    padding: 0 1rem;
     position: relative;
 }
 .signupButton img {
@@ -91,6 +90,11 @@
     right: 1rem;
     height: auto;
     border: none;
+}
+.button-info-container{
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
 }
 
 h3 {
@@ -104,7 +108,3 @@ h3 span {
     color: #5e3ede97;
 }
 
-.button-info-container {
-    position: absolute;
-    bottom: 1rem;
-}
