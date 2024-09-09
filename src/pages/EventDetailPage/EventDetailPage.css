@@ -1,6 +1,5 @@
 .event-detail-container {
   display: flex;
-  max-height: 600px;
   flex-direction: column;
   background-color: #fff;
   font-family: InterThin;
@@ -76,6 +75,15 @@
 
 .single-event-detail-text {
   margin: 2em 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  line-height: 1.5rem;
+}
+
+.single-event-detail-heading{
+  font-family: InterRegular;
+  font-weight: bold;
 }
 
 .event-detail-header {

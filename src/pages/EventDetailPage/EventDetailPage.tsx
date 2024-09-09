@@ -134,7 +134,7 @@ const EventDetailPage = () => {
           </div>
         </div>
         <div className="single-event-detail-text">
-          <p><b>About Event</b></p>
+          <p className="single-event-detail-heading">About Event</p>
           <p>{event?.event_info}</p>
         </div>
       </div>
