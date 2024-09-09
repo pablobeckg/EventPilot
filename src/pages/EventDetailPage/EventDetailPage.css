@@ -1,15 +1,16 @@
 .event-detail-container {
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   background-color: #fff;
   font-family: InterThin;
   overflow-y: scroll;
+  padding-bottom: 50px;
 }
 
 .single-event-detail-wrapper {
   padding: 1em;
   width: 90%;
-  height: 100%;
 }
 
 .single-event-img-container {
@@ -109,7 +110,7 @@
   position: relative;
   padding: 0.5em;
   margin: 1em;
-
+cursor: pointer;
   border: none;
 }
 

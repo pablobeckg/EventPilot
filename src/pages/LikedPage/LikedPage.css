@@ -4,6 +4,7 @@
     overflow: scroll;
     flex-grow: 1;
     overflow: scroll;
+    padding-bottom: 90px;
 }
 .liked-page-container > h1 {
     text-align: center;

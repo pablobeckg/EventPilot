@@ -120,7 +120,7 @@ const ProfilePage = () => {
                     {avatarFile ? avatarFile.name : 'Choose file'}
                 </label>
             </div>
-            <button onClick={handleUpload} disabled={uploading}>
+            <button className='upload-button' onClick={handleUpload} disabled={uploading}>
                 {uploading ? 'Uploading...' : 'Upload'}
             </button>
             <div className="profile-about-me-followers">

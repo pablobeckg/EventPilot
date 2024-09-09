@@ -1,6 +1,7 @@
 .event-list-container {
   flex-grow: 1;
   overflow: scroll;
+  padding-bottom: 90px;
 }
 
 .home-header {

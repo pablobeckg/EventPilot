@@ -1,12 +1,13 @@
 .profile-page {
   display: flex;
   max-width: 320px;
-  max-height: 600px;
+  flex-grow: 1;
   padding: 2rem;
   flex-direction: column;
   background-color: #fff;
   font-family: InterThin;
   overflow-y: scroll;
+  padding-bottom: 100px;
 }
 
 .avatar-wrapper {
@@ -115,5 +116,13 @@ h1 {
   gap: 10px;
   margin-bottom: 1rem;
   position: relative;
+  cursor: pointer;
+}
+
+.logout-btn {
+  cursor: pointer;
+}
+
+.upload-button {
   cursor: pointer;
 }
