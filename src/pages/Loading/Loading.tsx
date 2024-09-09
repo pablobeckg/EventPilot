@@ -2,12 +2,7 @@ import { useEffect } from "react";
 import { useUserContext } from "../../context/UserContext";
 const Loading = () => {
   const userContext = useUserContext();
-
   const setLoadingPage = userContext?.setLoadingPage;
-
-//   if (setLoadingPage) {
-//     setLoadingPage(true);
-//   }
 
   useEffect(() => {
     if (setLoadingPage) {
