@@ -1,5 +1,5 @@
 .search-header {
- 
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -9,7 +9,7 @@
 }
 
 .lupeContainer {
-  width: 320px;
+  min-width: 320px;
   display: flex;
   justify-content: flex-start;
   align-items: center;

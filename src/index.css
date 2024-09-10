@@ -23,7 +23,6 @@
 }
 
 body {
-  padding: 2rem;
   min-width: 375px;
   background-color: gainsboro;
   display: flex;

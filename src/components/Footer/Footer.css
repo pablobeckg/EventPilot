@@ -4,6 +4,7 @@ footer {
   height: 67px;
   min-width: 375px;
   box-shadow: 0 -4px 8px 0 rgba(157, 178, 214, 0.13);
+  width: 100%;
 }
 
 .footer-container {

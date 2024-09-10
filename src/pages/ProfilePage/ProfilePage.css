@@ -1,6 +1,5 @@
 .profile-page {
   display: flex;
-  max-width: 320px;
   flex-grow: 1;
   padding: 2rem;
   flex-direction: column;

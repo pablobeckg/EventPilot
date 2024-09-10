@@ -1,5 +1,5 @@
 .add-event-container {
-  min-width: 320px;
+  min-width: 375px;
   flex-grow: 1;
   letter-spacing: 1px;
   padding: 1rem;
@@ -95,7 +95,7 @@ input[type="time"].event-end-time::before {
   display: flex;
   align-items: center;
   padding-left: 1rem;
-  width: 18rem;
+  width: 100%;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 8px 30px 0px rgba(93, 61, 222, 0.05);
@@ -161,7 +161,6 @@ input[type="time"].event-end-time::before {
 }
 .dates-input {
   display: flex;
-  width: 18rem;
   align-items: center;
   gap: 1rem;
   background-color: white;
