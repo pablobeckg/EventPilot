@@ -2,7 +2,7 @@
     min-width: 375px;
     flex-grow: 1;
     height: 10px;
-    padding: 0 20px 30px 20px;
+    padding: 1rem;
 }
 
 .logoHeader {
@@ -73,7 +73,7 @@
 .button-info-container{
     position: absolute;
     bottom: 20px;
-    left: 50px;
+    left: 75px;
 }
 
 h3 {
