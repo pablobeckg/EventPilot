@@ -1,3 +1,10 @@
+.login-container {
+  min-width: 375px;
+  flex-grow: 1;
+  height: 10px;
+  padding: 1rem;
+}
+
 .logoHeader {
   display: flex;
   justify-content: center;
@@ -5,14 +12,8 @@
   padding-bottom: 3vh;
 }
 
-.login-container {
-  min-width: 375px;
-  flex-grow: 1;
-  height: 10px;
-  padding: 0 20px 30px 20px;
-}
 .login-form {
-  padding: 0 20px;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,7 +31,6 @@
   border-style: none;
   box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
   height: 3rem;
-  width: 100%;
   border-radius: 10px;
 }
 
@@ -42,19 +42,15 @@
   box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
   height: 3rem;
   border-radius: 10px;
-  padding-left: 1rem;
-  
 }
 .password-input {
-    width: 100%;
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-left: 1rem;
 }
 
 .password-input input {
-  width: 100%;
+
 }
 .password-input input::placeholder {
   color: #a6a6a6;
@@ -67,12 +63,11 @@
 .loginInputField input,
 .login-field input {
   border: none;
-  width: 100%;
+
 }
 .loginInputField button {
   background-color: transparent;
   border: none;
-  margin-right: 0.5rem;
 }
 
 
@@ -87,7 +82,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
   border-style: none;
   border-radius: 10px;
   color: white;
@@ -111,7 +105,6 @@
 .reset-password-container h3 {
   font-family: InterThin;
   font-size: 15px;
-  padding: 10px 20px;
   color: #120d26a4;
   text-align: center;
 }
@@ -126,7 +119,6 @@ h3 span {
   cursor: pointer;
   font-family: InterThin;
   font-size: 15px;
-  padding: 10px 20px;
   color: #120d26;
   text-align: center;
 }
