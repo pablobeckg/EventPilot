@@ -40,7 +40,7 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  overflow: scroll;
+  overflow-x: scroll;
   gap: 1rem;
 }
 
