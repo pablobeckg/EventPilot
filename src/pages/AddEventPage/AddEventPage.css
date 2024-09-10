@@ -52,6 +52,7 @@
   border: none;
   background-color: transparent;
   font-family: InterMedium;
+  color: #a6a6a6;
 }
 
 .addevent-input {
@@ -61,7 +62,7 @@
   gap: 1rem;
   border-radius: 10px;
   font-family: InterMedium;
-  color: gray;
+  color: #a6a6a6;
   box-shadow: 0px 8px 30px 0px rgba(93, 61, 222, 0.05);
 }
 
@@ -74,14 +75,13 @@ input[type="time"] {
   gap: 1rem;
   border-radius: 10px;
   font-family: InterMedium;
-  color: gray;
+  color: #a6a6a6;
   width: 90%;
 }
 
-
 .email-input select {
   font-family: InterMedium;
-  color: gray;
+  color: #a6a6a6;
 }
 
 input[type="time"]::-webkit-calendar-picker-indicator {
@@ -147,7 +147,6 @@ input[type="time"].event-end-time::before {
   margin-top: 2rem;
   cursor: pointer;
   width: 100%;
-
 }
 
 .addevent-input img {
@@ -161,21 +160,16 @@ input[type="time"].event-end-time::before {
 .email-input h1 {
   font-size: 0.83rem;
   font-weight: 100;
-  color: rgb(116, 116, 116);
-}
-.dates-input {
-  display: flex;
-  width: 94%;
-  align-items: center;
-  gap: 1rem;
-  background-color: white
-  border-radius: 10px;
-  box-shadow: 0px 8px 30px 0px rgba(93, 61, 222, 0.05);
-  
+  color: #a6a6a6;
 }
 
-input:focus, textarea {
- outline: none;
+input:focus,
+textarea {
+  outline: none;
+}
+
+textarea::placeholder {
+  color: #a6a6a6;
 }
 
 .add-event-container .add-event-header button {
