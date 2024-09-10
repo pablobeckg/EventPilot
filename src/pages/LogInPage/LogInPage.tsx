@@ -72,7 +72,7 @@ const LogInPage = () => {
           </div>
           <form className="login-form" onSubmit={handleLogin}>
             <h2>Sign in</h2>
-            <div className="login-field">
+            <div className="email-input">
               <img src="/Message.png" alt="" />
               <input
                 type="email"
@@ -82,8 +82,8 @@ const LogInPage = () => {
                 required
               />
             </div>
-            <div className="loginInputField">
-              <div className="password-input">
+            <div className="password-container">
+              <div className="password-elements">
                 <img src="/Lock.png" alt="" />
                 <input
                   type={passwordVisible ? "text" : "password"}

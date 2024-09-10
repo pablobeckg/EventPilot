@@ -51,7 +51,7 @@ const SignUpPage = () => {
       </div>
       <form className="signup-form" onSubmit={handleSignup}>
         <h2>Sign up</h2>
-        <div className="login-field">
+        <div className="email-input">
           <img src="/Profile.png" alt="" />
           <input
             type="text"
@@ -61,7 +61,7 @@ const SignUpPage = () => {
             required
           />
         </div>
-        <div className="login-field">
+        <div className="email-input">
           <img src="/Message.png" alt="" />
           <input
             type="email"
@@ -72,8 +72,8 @@ const SignUpPage = () => {
           />
         </div>
 
-        <div className="loginInputField">
-          <div className="password-input">
+        <div className="password-container">
+          <div className="password-elements">
             <img src="/Lock.png" alt="" />
             <input
               type={passwordVisible ? "text" : "password"}
@@ -94,8 +94,8 @@ const SignUpPage = () => {
             />
           </button>
         </div>
-        <div className="loginInputField">
-          <div className="password-input">
+        <div className="password-container">
+          <div className="password-elements">
             <img src="/Lock.png" alt="" />
             <input
               type={passwordVisible ? "text" : "password"}
@@ -115,7 +115,7 @@ const SignUpPage = () => {
         </div>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         {successMessage && <p className="success-message">{successMessage}</p>}
-        <div className="button-info-container">
+        <div className="account-container">
           <button className="signupButton" type="submit">
             Sign Up <img src="./Arrow.png" alt="ArrowButton" />
           </button>

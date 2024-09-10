@@ -2,23 +2,22 @@
   min-width: 375px;
   flex-grow: 1;
   height: 10px;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .logoHeader {
   display: flex;
   justify-content: center;
-  padding-top: 7vh;
+  padding-top: 3vh;
   padding-bottom: 3vh;
 }
 
 .login-form {
-  
-  padding: 0 20px;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+  gap: 1rem;
 }
 .login-form h2 {
   font-family: InterMedium;
@@ -26,58 +25,58 @@
   color: #120d26;
 }
 
-.loginInputField {
-  display: flex;
-  justify-content: space-between;
-  border-style: none;
-  box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
+.email-input {
   height: 3rem;
-  border-radius: 10px;
-  padding: 0 10px;
-  width: 94%;
-}
-
-.login-field {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  border-style: none;
-  box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
-  height: 3rem;
   border-radius: 10px;
-  padding: 0 10px;
-  width: 94%;
-}
-.password-input {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  gap: 1rem;
+  padding: 0 1rem;
+  box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
 }
 
-.password-input input::placeholder {
-  color: #a6a6a6;
+.email-input input {
+  border-style: none;
 }
 
-.login-field input::placeholder {
-  color: #a6a6a6;
+.password-container {
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(93, 62, 222, 0.1);
+}
+.password-container .password-elements {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
 }
 
-.loginInputField input,
-.login-field input {
+.password-container .password-elements input {
+  border-style: none;
+}
+
+.password-container button {
   border: none;
-
-}
-.loginInputField button {
   background-color: transparent;
-  border: none;
 }
 
+.password-elements input::placeholder {
+  color: #a6a6a6;
+}
 
+.email-input input::placeholder {
+  color: #a6a6a6;
+}
 
 .account-container {
   position: absolute;
-  bottom: 20px;
-  left: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2rem;
 }
 
 .loginButton {
@@ -111,7 +110,7 @@
   text-align: center;
 }
 
-h3 span {
+.account-container h3 span {
   color: #5e3ede97;
 }
 
