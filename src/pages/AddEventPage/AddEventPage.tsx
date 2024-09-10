@@ -204,7 +204,7 @@ const AddEventPage = () => {
         <label htmlFor="image-upload" className="custom-file-image">
           <CameraIcon /> {eventImage ? eventImage.name : "Image"}
         </label>
-        <div className="addevent-input">
+        <div className="email-input">
           <img src="/Name.png" alt="" />
           <input
             type="text"
@@ -216,7 +216,7 @@ const AddEventPage = () => {
           />
         </div>
 
-        <div className="addevent-input">
+        <div className="email-input">
           <img src="/Name.png" alt="" />
           <select
             name="category"
@@ -232,7 +232,7 @@ const AddEventPage = () => {
             ))}
           </select>
         </div>
-        <div className="addevent-input">
+        <div className="email-input">
           <img src="/Location.png" alt="" />
           <input
             type="text"
@@ -243,7 +243,7 @@ const AddEventPage = () => {
             required
           />
         </div>
-        <div className="addevent-input">
+        <div className="email-input">
           <img src="/Location.png" alt="" />
           <input
             type="text"
@@ -254,7 +254,7 @@ const AddEventPage = () => {
             required
           />
         </div>
-        <div className="dates-input">
+        <div className="email-input">
           <img src="/Calender.png" alt="" />
           <h1>Date</h1>
           <input
@@ -267,7 +267,7 @@ const AddEventPage = () => {
           />
         </div>
 
-        <div className="date-container">
+        <div className="email-input">
           <img src="/Calender.png" alt="" />
           <input
             type="time"
@@ -280,7 +280,7 @@ const AddEventPage = () => {
           />
         </div>
 
-        <div className="date-container">
+        <div className="email-input">
           <img src="/Calender.png" alt="" />
           <input
             type="time"

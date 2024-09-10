@@ -54,11 +54,21 @@
   font-family: InterMedium;
 }
 
-.addevent-input,
+.addevent-input {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 10px;
+  font-family: InterMedium;
+  color: gray;
+  box-shadow: 0px 8px 30px 0px rgba(93, 61, 222, 0.05);
+}
+
 input[type="date"],
 input[type="time"] {
   background-color: white;
-  padding: 1rem;
+  padding: 1rem 0;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -68,14 +78,8 @@ input[type="time"] {
   width: 90%;
 }
 
-.addevent-input {
-  box-shadow: 0px 8px 30px 0px rgba(93, 61, 222, 0.05);
-}
-.text-input {
-  align-self: start;
-}
 
-.addevent-input select {
+.email-input select {
   font-family: InterMedium;
   color: gray;
 }
@@ -95,7 +99,6 @@ input[type="time"].event-end-time::before {
 .date-container {
   display: flex;
   align-items: center;
-  padding-left: 1rem;
   width: 94%;
   background-color: white;
   border-radius: 10px;
@@ -155,7 +158,7 @@ input[type="time"].event-end-time::before {
   width: 100%;
 }
 
-.dates-input h1 {
+.email-input h1 {
   font-size: 0.83rem;
   font-weight: 100;
   color: rgb(116, 116, 116);
@@ -165,8 +168,7 @@ input[type="time"].event-end-time::before {
   width: 94%;
   align-items: center;
   gap: 1rem;
-  background-color: white;
-  padding-left: 1rem;
+  background-color: white
   border-radius: 10px;
   box-shadow: 0px 8px 30px 0px rgba(93, 61, 222, 0.05);
   

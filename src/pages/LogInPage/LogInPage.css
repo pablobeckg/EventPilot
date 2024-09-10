@@ -37,6 +37,7 @@
 
 .email-input input {
   border-style: none;
+  width: 100%;
 }
 
 .password-container {
