@@ -3,6 +3,7 @@ import supabaseClient from "../../lib/supabaseClient";
 import { Category, Location, Venue } from "../../types/supabase-types-own";
 import "./AddEventPage.css";
 import CameraIcon from "../../assets/svg/CameraIcon";
+import { useNavigate } from "react-router-dom";
 
 const AddEventPage = () => {
   const [eventName, setEventName] = useState<string>("");
@@ -19,6 +20,8 @@ const AddEventPage = () => {
   const [eventImage, setEventImage] = useState<File | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -175,6 +178,9 @@ const AddEventPage = () => {
   return (
     <div className="add-event-container">
       <header className="add-event-header">
+      <button className="prev-btn" onClick={() => navigate(-1)}>
+          <img src="/prev-btn-black.png" alt="go to previous page" />
+        </button>
         <h2>
           Add <span>Event</span>
         </h2>
