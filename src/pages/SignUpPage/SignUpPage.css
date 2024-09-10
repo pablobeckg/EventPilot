@@ -8,8 +8,8 @@
 .logoHeader {
     display: flex;
     justify-content: center;
-    padding-top: 5vh;
-    padding-bottom: 2vh;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
 }
 .logoHeader img {
     width: 10rem;
@@ -17,17 +17,18 @@
 }
 
 .signup-form {
-    padding: 0 20px;
+    padding: 0 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
+    gap: 1rem;
 }
 
 .signup-form h2 {
     font-family: InterMedium;
     font-size: 24px;
     color: #120D26;
+    margin-bottom: 1rem;
 }
 
 .signupInputField {

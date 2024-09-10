@@ -2,7 +2,7 @@
   min-width: 375px;
   flex-grow: 1;
   height: 10px;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .logoHeader {
@@ -23,6 +23,7 @@
   font-family: InterMedium;
   font-size: 24px;
   color: #120d26;
+  margin-bottom: 1rem;
 }
 
 .email-input {
