@@ -77,11 +77,6 @@
   font-family: "InterThin";
 }
 
-.categoriesButton button:focus {
-  background-color: #00ecaa;
-  color: #1f1f1f;
-}
-
 .seachResultContainer {
   flex-grow: 1;
   overflow: scroll;
@@ -114,3 +109,9 @@ height: 450px;
   font-size: 1rem;
 }
 
+.categoriesButton .activeCategory {
+  background-color: #00ecaa;
+}
+.categoriesButton .activeCategoryWithStroke {
+  background-color: #00ecaa;
+}

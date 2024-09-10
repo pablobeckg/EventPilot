@@ -146,6 +146,8 @@ const SearchPage = () => {
     }
   };
 
+  console.log(selectedCategory)
+
   return (
     <>
       <header className="search-header">
