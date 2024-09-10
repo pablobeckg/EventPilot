@@ -13,6 +13,7 @@
   font-family: "InterMedium";
   text-align: center;
   margin-bottom: 2rem;
+  margin-top: -2.25em;
 }
 .add-event-container h2 span {
   color: #00ecaa;
@@ -172,4 +173,17 @@ input[type="time"].event-end-time::before {
 
 input:focus, textarea {
  outline: none;
+}
+
+.add-event-container .add-event-header button {
+  position: relative;
+  padding: 0.5em;
+  margin: 1em;
+  cursor: pointer;
+  border: none;
+  padding: 0.25em;
+  margin: 1em;
+  background-color: transparent;
+  border: none;
+  width: 20px;
 }
